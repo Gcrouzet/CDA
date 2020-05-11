@@ -9,8 +9,10 @@ public class Exercice_3_2 {
 		System.out.println("Entrez une phrase finissant par . :");
 		String phrase = sc.nextLine();
 		if (phrase.endsWith(".")) {
-			if (phrase == ".") {
+			if (phrase.equals (".")) {
 				System.out.println("La phrase est vide");
+				sc.close();
+				return;
 			}
 			if (phrase != ".") {
 

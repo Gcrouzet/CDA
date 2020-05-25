@@ -48,10 +48,10 @@ class Employee {
         this.hiredate = _hiredate.toISOString().substring(0, 10);
     }
 
-    getMonthlySalary = function () {
+    getMonthlySalary() {
         return Math.round(this.salary / 12 * 0.75);
     }
-    getSeniority = function () {
+    getSeniority() {
         let now = new Date();
         let embaucheDate = new Date(this.hiredate.replace('-', ','));
         let diff = now.getTime() - embaucheDate.getTime();
@@ -98,11 +98,8 @@ console.log(employees); // export des employés dans la console
 /** FIN ZONE NON EDITABLE (Ne pas modifier les lignes précédentes) */
 
 for (let i = 0; i < employees.length; i++) {
-    console.log(i + 1 + ' - ' + employees[i].lastname +
-        ' ' + employees[i].firstname +
-        ', ' + employees[i].email +
-        ', ' + employees[i].getSeniority() +
-        ', ' + employees[i].getMonthlySalary() + '€');
+    console.log(i + 1 + ' - ' + employees[i].lastname + ' ' + employees[i].firstname + ', ' + employees[i].email + ', '
+        + employees[i].getSeniority() + ', ' + employees[i].getMonthlySalary() + '€');
 }
 
 

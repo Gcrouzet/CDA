@@ -45,7 +45,7 @@ class Employee {
         this.email = _firstname.substring(0, 1).toLowerCase() + _lastname.toLowerCase() + "@email.fr";
         this.role = _role;
         this.salary = _salary;
-        this.hiredate = _hiredate.toISOString().substring(0, 10);
+        this.hiredate = _hiredate;
     }
 
     getMonthlySalary() {
@@ -139,5 +139,5 @@ console.log("L'employé avec le plus bas salaire est " + basSalaire.lastname + "
 
 //La différence de salaire entre les 2 précédents 
 
-let diffSalaire = hautSalaire.salary-basSalaire.salary;
-console.log("La différence de salaire entre le plus haut et le plus bas salaire est de "+diffSalaire+" €.");
+let diffSalaire = hautSalaire.salary - basSalaire.salary;
+console.log("La différence de salaire entre le plus haut et le plus bas salaire est de " + diffSalaire + " €.");

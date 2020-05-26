@@ -53,7 +53,7 @@ class Employee {
     }
     getSeniority() {
         let now = new Date();
-        let embaucheDate = new Date(this.hiredate);
+        let embaucheDate = this.hiredate;
         let diff = now.getTime() - embaucheDate.getTime();
         diff = Math.floor(diff / (1000 * 60 * 60 * 24));
         let année = Math.floor(diff / 365);

@@ -53,7 +53,7 @@ class Employee {
     }
     getSeniority() {
         let now = new Date();
-        let embaucheDate = new Date(this.hiredate.replace('-', ','));
+        let embaucheDate = new Date(this.hiredate);
         let diff = now.getTime() - embaucheDate.getTime();
         diff = Math.floor(diff / (1000 * 60 * 60 * 24));
         let année = Math.floor(diff / 365);
@@ -66,7 +66,7 @@ class Employee {
             return "L'employé n'est pas encore dans l'entreprise";
         }
         if (jour > 0 && mois > 0 && année > 0) {
-            return année + " ans et " + mois + " mois et " + jour + " jours ";
+            return année + " ans , " + mois + " mois et " + jour + " jours ";
         } else if (jour > 0 && mois > 0 && année == 0) {
             return mois + " mois et " + jour + " jours ";
         } else if (jour > 0 && mois == 0 && année == 0) {
@@ -84,7 +84,7 @@ var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-
 var employee2 = new Employee(2, 'Crouzet', 'Gabriel', 'Boss', 500000, new Date('2010-10-21'));
 var employee3 = new Employee(3, 'Torrenti', 'Sylvain', 'Expert (partage)', 150000, new Date('2018-02-20'));
 var employee4 = new Employee(4, 'Schmitt', 'Joanna', 'Directrice', 250000, new Date('2015-08-18'));
-var employee5 = new Employee(5, 'Hamza', 'Reda', 'Vendeur sénior', 50000, new Date('1950-05-10'));
+var employee5 = new Employee(5, 'Hamza', 'Reda', 'Vendeur sénior', 70000, new Date('1950-05-10'));
 
 /** @var array employees */
 const employees = [employee1]; // tableau contenant les employés
@@ -98,9 +98,46 @@ console.log(employees); // export des employés dans la console
 /** FIN ZONE NON EDITABLE (Ne pas modifier les lignes précédentes) */
 
 for (let i = 0; i < employees.length; i++) {
-    console.log(i + 1 + ' - ' + employees[i].lastname + ' ' + employees[i].firstname + ', ' + employees[i].email + ', '
+    console.log(employees[i].lastname + ' ' + employees[i].firstname + ', ' + employees[i].email + ', '
         + employees[i].getSeniority() + ', ' + employees[i].getMonthlySalary() + '€');
 }
 
+// comparer ancienneté
 
 
+let senior = employees[0];
+for (let index = 0; index < employees.length; index++) {
+    if (employees[index].hiredate < senior.hiredate) {
+        senior = employees[index];
+    }
+
+}
+console.log("L'employé avec le plus d'ancienneté est " + senior.lastname + " " + senior.firstname);
+
+
+//L'employé avec le plus haut salaire
+
+let hautSalaire = employees[0];
+for (let index = 0; index < employees.length; index++) {
+    if (employees[index].salary > hautSalaire.salary) {
+        hautSalaire = employees[index];
+    }
+
+}
+console.log("L'employé avec le plus haut salaire est " + hautSalaire.lastname + " " + hautSalaire.firstname);
+
+//L'employé avec le plus bas salaire
+
+let basSalaire = employees[0];
+for (let index = 0; index < employees.length; index++) {
+    if (employees[index].salary < basSalaire.salary) {
+        basSalaire = employees[index];
+    }
+
+}
+console.log("L'employé avec le plus bas salaire est " + basSalaire.lastname + " " + basSalaire.firstname);
+
+//La différence de salaire entre les 2 précédents 
+
+let diffSalaire = hautSalaire.salary-basSalaire.salary;
+console.log("La différence de salaire entre le plus haut et le plus bas salaire est de "+diffSalaire+" €.");

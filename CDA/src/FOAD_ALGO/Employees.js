@@ -39,12 +39,12 @@
  */
 class Employee {
     constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
-        this.id = _id;
+        this.id =parseInt(_id);
         this.lastname = _lastname;
         this.firstname = _firstname;
-        this.email = _firstname.substring(0, 1).toLowerCase() + _lastname.toLowerCase() + "@email.fr";
+        this.email = this.firstname.substring(0, 1).toLowerCase() + this.lastname.toLowerCase() + "@email.fr";
         this.role = _role;
-        this.salary = _salary;
+        this.salary = parseInt(_salary);
         this.hiredate = _hiredate;
     }
 
@@ -53,8 +53,7 @@ class Employee {
     }
     getSeniority() {
         let now = new Date();
-        let embaucheDate = this.hiredate;
-        let diff = now.getTime() - embaucheDate.getTime();
+        let diff = now - this.hiredate;
         diff = Math.floor(diff / (1000 * 60 * 60 * 24));
         let année = Math.floor(diff / 365);
         diff = diff - année * 365;
@@ -62,15 +61,16 @@ class Employee {
         diff = diff - mois * 30;
         let jour = diff;
 
-        if (now < embaucheDate) {
-            return "L'employé n'est pas encore dans l'entreprise";
-        }
+        
+        
         if (jour > 0 && mois > 0 && année > 0) {
             return année + " ans , " + mois + " mois et " + jour + " jours ";
         } else if (jour > 0 && mois > 0 && année == 0) {
             return mois + " mois et " + jour + " jours ";
         } else if (jour > 0 && mois == 0 && année == 0) {
             return jour + " jours ";
+        }else {
+        return "L'employé n'est pas encore dans l'entreprise";
         }
     }
 }
@@ -140,4 +140,4 @@ console.log("L'employé avec le plus bas salaire est " + basSalaire.lastname + "
 //La différence de salaire entre les 2 précédents 
 
 let diffSalaire = hautSalaire.salary - basSalaire.salary;
-console.log("La différence de salaire entre le plus haut et le plus bas salaire est de " + diffSalaire + " €.");
+console.log("La différence entre le plus haut et le plus bas salaire est de " + diffSalaire + "€.");

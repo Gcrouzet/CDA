@@ -12,9 +12,10 @@ class Enterprise {
      * 
      * @param  _filter 
      */
-    readAll(_filter) {
-
+    readAll() {
+        return this.employees;
     }
+
 
     /**
      * Créer un employé
@@ -41,10 +42,25 @@ class Enterprise {
      * Met à jour un employé
      * @param Employee _employee 
      */
-    update(_employee, _newRole) {
-        _employee.role = _newRole;
-    }
+    update(_employee, _new, _change) {
+        switch (_change) {
+            case "lastname":
+                return _employee.lastname=_new ;
+            case "firstname":
+                return _employee.firstname=_new;
+            case "role":
+                return _employee.role=_new;
+            case "salary":
+                return _employee.salarye=_new;
+            case "hiredate":
+                return _employee.hiredate=_new;
+            case "email":
+                return _employee.emaile=_new;
+            default:
+                return _employee.id=_new;
 
+        }
+    }
     /**
      * Supprime un employé
      * @param int _id 
@@ -59,8 +75,6 @@ class Enterprise {
         }
 
     }
-
-
 
     /**
      * Augmentation du salaire

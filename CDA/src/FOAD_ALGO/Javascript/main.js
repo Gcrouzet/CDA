@@ -18,10 +18,11 @@ ubisoft.create(employee3);
 ubisoft.create(employee4);
 ubisoft.create(employee5);
 
-ubisoft.delete(2);
-ubisoft.update(employee3,"esclave")
-ubisoft.getLowerSalary(employee3,"1")
-console.log("Il y a " + ubisoft.employees.length + " employé(e)s.");
-console.log(ubisoft); // export des employés dans la console
+/*ubisoft.delete(2);*/
+ubisoft.update(employee3,"Expert ++","role")
+ubisoft.getHigherSalary(employee3,1000000)
+/*console.log("Il y a " + ubisoft.employees.length + " employé(e)s.");
+console.log(ubisoft); // export des employés dans la console*/
 
 console.log(ubisoft.read(3));
+console.log(ubisoft.readAll());

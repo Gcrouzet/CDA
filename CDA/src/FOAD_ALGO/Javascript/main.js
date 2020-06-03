@@ -19,10 +19,10 @@ ubisoft.create(employee4);
 ubisoft.create(employee5);
 
 /*ubisoft.delete(2);*/
-ubisoft.update(employee3,"Expert ++","role")
-ubisoft.getHigherSalary(employee3,1000000)
 /*console.log("Il y a " + ubisoft.employees.length + " employé(e)s.");
 console.log(ubisoft); // export des employés dans la console*/
+console.log(employee3);
 
 console.log(ubisoft.read(3));
-console.log(ubisoft.readAll());
+console.log(ubisoft.getHighestSalary());
+console.log(ubisoft.getLowestSalary());

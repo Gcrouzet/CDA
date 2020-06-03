@@ -110,13 +110,11 @@ class Enterprise {
      * @param int _id 
      */
     delete(_id) {
-        for (let i = 0; i < this.employees.length; i++) {
-            if (this.employees[i].id == _id) {
-                this.employees.splice(i, 1);
-                break;
-            }
-        }
+        let employeeIndex = this.employees.findIndex(emp => emp.id === parseInt(_id));
+        this.employees.splice(employeeIndex, 1);
     }
+
+
 
     /**
      *

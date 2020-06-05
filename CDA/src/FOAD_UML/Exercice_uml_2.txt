@@ -1,0 +1,6 @@
+états d’une bouteille
+
+- ouverte remplie
+- ouverte vide
+- fermée remplie
+- fermée vide

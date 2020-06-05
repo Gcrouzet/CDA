@@ -47,62 +47,32 @@ class Enterprise {
      * @param int _id 
      */
     read(_id) {
-        /* for (let i = 0; i < this.employees.length; i++) {
-             if (this.employees[i].id === parseInt(_id)) {
-                 return this.employees[i];
-                 break;
-             }
-         }*/
+       
         let emp = this.employees.find(emp => emp.id === parseInt(_id));
 
         if (emp !== undefined) {
-            // retourner une copie de l'employé
-            // cloner l'objet : let copie = Object.assign()
-            // moteur de recherche : MDN JS object assign
-            // moteur de recherche newbie: JS cloner objet
-            let emp2 = Object.assign({}, emp)
-            return emp2
+        let copie = Object.assign(new Employee(), emp);
+        return copie ;
         }
 
         return undefined;
     }
-
+    
     /**
      * Met à jour un employé
      * @param Employee _employee 
      */
     update(_employee) {
-        /*switch (_change) {
-            case "lastname":
-                return _employee.lastname = _new;
-            case "firstname":
-                return _employee.firstname = _new;
-            case "role":
-                return _employee.role = _new;
-            case "salary":
-                return _employee.salarye = _new;
-            case "hiredate":
-                return _employee.hiredate = _new;
-            case "email":
-                return _employee.emaile = _new;
-            default:
-                return _employee.id = _new;
-
-        }*/
         if (!this.isValid(_employee)) {
             return _employee;
         }
-
         if (_employee.id < 1 && _employee.id !== NaN) {
             return _employee;
         }
-
         let exists = this.read(_employee.id);
-
         if (exists !== undefined && exists === _employee) {
 
         }
-
         return _employee;
     }
     /**
@@ -110,8 +80,8 @@ class Enterprise {
      * @param int _id 
      */
     delete(_id) {
-        let employeeIndex = this.employees.findIndex(emp => emp.id === parseInt(_id));
-        this.employees.splice(employeeIndex, 1);
+        let index = this.employees.findIndex(emp => emp.id === parseInt(_id));
+        this.employees.splice(index, 1);
     }
 
 
@@ -154,10 +124,6 @@ class Enterprise {
             return _employeeB.firstname + " perçoit " + diff + "€/an de plus que " + _employeeA.firstname;
         }
     }
-
-
-
-
 
 
 

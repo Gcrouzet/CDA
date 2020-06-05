@@ -4,10 +4,10 @@
 class Employee {
     constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
         this.id = parseInt(_id);
-        this.lastname = _lastname;
-        this.firstname = _firstname;
-        this.email = this.firstname.substring(0, 1).toLowerCase() + this.lastname.toLowerCase() + "@email.fr";
-        this.role = _role;
+        this.lastname = _lastname || "";
+        this.firstname = _firstname|| "";
+        this.email =  (this.firstname[0] + this.lastname).toLowerCase() + "@email.fr";
+        this.role = _role || "";
         this.salary = parseInt(_salary);
         this.hiredate = _hiredate;
     }

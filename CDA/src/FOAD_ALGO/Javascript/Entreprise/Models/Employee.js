@@ -2,15 +2,44 @@
  * @class Employee
  */
 class Employee {
-    constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
-        this.id = parseInt(_id);
-        this.lastname = _lastname || "";
-        this.firstname = _firstname|| "";
-        this.email =  (this.firstname[0] + this.lastname).toLowerCase() + "@email.fr";
-        this.role = _role || "";
-        this.salary = parseInt(_salary);
-        this.hiredate = _hiredate;
+    constructor(_employee) {
+        this.id = 0;
+        this.lastname = "Doe";
+        this.firstname = "John";
+        this.role = "Unknown";
+        this.salary = 0;
+        this.hiredate = new Date();
+        this.email = null;
+
+        if(_employee !== undefined) { // si un objet est fourni en argument
+            this.copy(_employee);
+        }
     }
+    /**
+    * Analyse et copie les informations de l'objet fourni en argument
+    * Seuls les valeurs des attributs nécessaires à l'objet actuel sont copiés.
+    * @param Object _employee un objet quelconque à analyser et à copier
+    */
+    copy(_employee) {
+
+        // si l'argument _employee n'est pas fourni, _employee = un objet litéral vide
+        _employee = _employee || {};
+
+        this.id = parseInt(_employee.id || 0);
+        this.lastname = _employee.lastname || "Doe";
+        this.firstname = _employee.firstname || "John";
+        this.role = _employee.role || "Unknown";
+        this.salary = parseInt(_employee.salary || 0);
+        this.email = (this.firstname[0] + this.lastname).toLowerCase() + "@email.fr";
+
+        // Recréation de l'objet Date à partir de la date fournie
+        if (_employee.hiredate !== undefined) {
+            this.hiredate = new Date(_employee.hiredate);
+        }
+    }
+
+
+
 
     getMonthlySalary() {
         return Math.round(this.salary / 12 * 0.75);

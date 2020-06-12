@@ -68,6 +68,49 @@ class Area {
     }
 
     /**
+    * Vérifie disponibilité des coordonnées en paramètre
+    * @param _x Coordonnée horizontale du point (abscisse). Valeur négative acceptée
+    * @param _y Coordonnée verticale du point (ordonnée). Valeur négative acceptée
+    * @returns Boolean : true si libre / false si occupé
+    */
+    isFree(_x, _y) {
+        if (this.pointArea.find((p) => p.x === _x && p.y === _y) !== undefined) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+    * Déplace le point en paramètre vers le point libre le plus plus proche du point d'origine
+    * @param _point Point à déplacer
+    * @returns Boolean true en cas de succès, false en cas d'échec
+    */
+    moveOnFreeEmplacement(_point) {
+        let free = this.firstFreeEmplacement();
+        if (free === undefined) {
+            return false;
+        }
+        _point.move(free.x, free.y);
+        return true;
+    }
+    /** Recherche la position la plus proche du point d'origine
+    * @returns Point le premier point libre trouvé au plus proche du point d'orgine
+    */
+    firstFreeEmplacement() {
+        //parcours des coordonées par proximité avec le point d'origine
+        //(priorité bord suppérieur : ordonnée(y) croissant
+        //diagonale accessible par mouvement horizontal/vertical uniquement)
+        for (let i = 1; i < this.width; i++) {
+            for (let x = i, y = 0; y < this.height && x >= 0; x--, y++) {
+                //si prochaines coordonnées libres :
+                if (this.isFree(x, y)) {
+                    //retourne le point correspondant
+                    return new Point(x, y);
+                }
+            }
+        }
+    }
+    /**
      * Ajoute un "Point" dans la zone
      * Le "Point" peut se trouver hors des limites de la zone
      * @param Point _point 
@@ -84,31 +127,32 @@ class Area {
         return true;
     }
 
-
     /**
      * Déplace un point existant dans la zone vers de nouvelles coordonnées
      * Les nouvelles coordonnées peuvent se trouver hors limites
      * @returns Boolean true en cas de succès, false en cas d'échec
      */
     movePoint(_point, _x, _y) {
-        let i, j;
-        if (!(_point instanceof Point)) {
+        // verifie la validité du point
+        if (!this.isValid(_point)) {
             return false;
         }
-        if (this.pointArea.find(e => e.x === _x && e.y === _y) !== undefined) {
-            for (i = 0; i < this.width; i++) {
-                for (j = 0; j < this.height; j++) {
-                    let notFree = this.pointArea.find((e) => e.x === i && e.y === j);
-                    if (notFree === undefined) {
-                        _point.move(i, j);
-                        return true;
-
-                    }
-                }
-            }
+        // verifie que le point existe dans la zone
+        if (this.isFree(_point.x, _point.y)) {
+            //coordonnées libres : point inexistant
+            return false;
         }
-        _point.move(_x, _y);
-        return true;
+
+        //verifie la disponibilité des nouvelles coordonnées
+        if (this.isFree(_x, _y)) {
+            //point existant et nouvelles coordonnées non utilisées
+            _point.move(_x, _y);
+            return true;
+        } else {
+            //point existant et nouvelles coordonnées déjà utilisées :
+            this.moveOnFreeEmplacement(_point); //deplacement vers position la plus proche du point d'origine
+            return true;
+        }
     }
 
     /**
@@ -116,9 +160,34 @@ class Area {
      * Chaque Point hors des limites est automatiquement déplacé dans les limites vers la position libre la plus proche
      * @returns int le nombre de points déplacés
      */
-    needAllInside(/* déterminer les paramètres */) {
-        // implémenter la méthode
+    needAllInside() {
+        let moved = 0; //compteur déplacement
+        this.pointArea.forEach((p) => {
+            if (p.x > this.width || p.y > this.height || p.x < 0 || p.y < 0) {
+                //si hors limite
+                this.moveOnFreeEmplacement(p); //déplace
+                moved++;
+            }
+        });
+        return moved;
     }
+
+    notInside() {
+        let pointNotInside = [];
+        this.pointArea.forEach((p) => {
+            if (p.x > this.width || p.y > this.height || p.x < 0 || p.y < 0) {
+                //si hors limite
+                pointNotInside.push(p);
+            }
+        });
+        return pointNotInside;
+    }
+
+    freeLocation() {
+        let freeLocation = this.areaSize - this.pointArea.length;
+        return freeLocation;
+    }
+
 }
 
 module.exports = Area;

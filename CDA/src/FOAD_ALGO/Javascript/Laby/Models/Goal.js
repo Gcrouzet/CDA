@@ -2,12 +2,12 @@ const Point = require("./Point");
 
 class Goal extends Point {
 
-    /** @var string */
+    /** @var boolean */
     #success;
 
-    constructor(_success) {
-        super();
-        this.#success = _success;
+    constructor(_x,_y) {
+        super(_x,_y);
+        this.#success = true;
     }
     getSucces(){
         return this.#success;

@@ -5,7 +5,7 @@ class Wall extends Point {
     /** @var string */
     #material;
 
-    constructor(_material,_x,_y) {
+    constructor(_x,_y,_material) {
         super(_x,_y);
         this.#material = _material|| "wood";
     }

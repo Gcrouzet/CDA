@@ -75,7 +75,7 @@ namespace Calculatrice
         private void button12_Click(object sender, EventArgs e)
         {
             
-            this.textBoxAffichageCalcul.Text = '='+this.somme.ToString()+'+' ;
+            this.textBoxAffichageCalcul.Text += '='+this.somme.ToString()+'+' ;
 
         }
 

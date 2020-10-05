@@ -21,70 +21,62 @@ namespace Calculatrice
 
        
         
+
         private void button0_Click(object sender, EventArgs e)
         {
-            this.somme += 0;
-            this.textBoxAffichageCalcul.Text += "0+" ;
-        }
+            Button b = (Button)sender;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.somme += 1;
-            this.textBoxAffichageCalcul.Text += "1+";
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.somme += 2;
-            this.textBoxAffichageCalcul.Text += "2+";
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.somme += 3;
-            this.textBoxAffichageCalcul.Text += "3+";
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.somme += 4;
-            this.textBoxAffichageCalcul.Text += "4+";
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.somme += 5;
-            this.textBoxAffichageCalcul.Text += "5+";
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.somme += 6;
-            this.textBoxAffichageCalcul.Text += "6+";
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.somme += 7;
-            this.textBoxAffichageCalcul.Text += "7+";
-        }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.somme += 8;
-            this.textBoxAffichageCalcul.Text += "8+";
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            this.somme += 9;
-            this.textBoxAffichageCalcul.Text += "9+";
-        }
-        private void button12_Click(object sender, EventArgs e)
-        {
-            
-            this.textBoxAffichageCalcul.Text += '='+this.somme.ToString()+'+' ;
+            switch (b.Name)
+            {
+                case "button0":
+                    this.somme += 0;
+                    this.textBoxAffichageCalcul.Text += "0+";
+                    break;
+                case "button1":
+                    this.somme += 1;
+                    this.textBoxAffichageCalcul.Text += "1+";
+                    break;
+                case "button2":
+                    this.somme += 2;
+                    this.textBoxAffichageCalcul.Text += "2+";
+                    break;
+                case "button3":
+                    this.somme += 3;
+                    this.textBoxAffichageCalcul.Text += "3+";
+                    break;
+                case "button4":
+                    this.somme += 4;
+                    this.textBoxAffichageCalcul.Text += "4+";
+                    break;
+                case "button5":
+                    this.somme += 5;
+                    this.textBoxAffichageCalcul.Text += "5+";
+                    break;
+                case "button6":
+                    this.somme += 6;
+                    this.textBoxAffichageCalcul.Text += "6+";
+                    break;
+                case "button7":
+                    this.somme += 7;
+                    this.textBoxAffichageCalcul.Text += "7+";
+                    break;
+                case "button8":
+                    this.somme += 8;
+                    this.textBoxAffichageCalcul.Text += "8+";
+                    break;
+                case "button9":
+                    this.somme += 9;
+                    this.textBoxAffichageCalcul.Text += "9+";
+                    break;
+                case "vider":
+                    this.textBoxAffichageCalcul.Clear();
+                    this.somme = 0;
+                    break;
+                case "calculer":
+                    this.textBoxAffichageCalcul.Text += '=' + this.somme.ToString() + '+';
+                    break;
 
+            }
         }
-
-        private void clear_Click(object sender, EventArgs e)
-        {
-            this.textBoxAffichageCalcul.Clear();
-            this.somme = 0;
-        }
-
-
     }
 }

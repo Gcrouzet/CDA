@@ -12,7 +12,7 @@ namespace Calculatrice
 {
     public partial class Form1 : Form
     {
-        int somme = 0 ;
+        private int somme = 0 ;
 
         public Form1()
         {

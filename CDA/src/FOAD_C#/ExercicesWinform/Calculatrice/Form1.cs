@@ -12,19 +12,20 @@ namespace Calculatrice
 {
     public partial class Form1 : Form
     {
-        private int somme = 0 ;
+        private int somme = 0;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-       
-        
+
+
 
         private void button0_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
+
 
             switch (b.Name)
             {
@@ -77,6 +78,11 @@ namespace Calculatrice
                     break;
 
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

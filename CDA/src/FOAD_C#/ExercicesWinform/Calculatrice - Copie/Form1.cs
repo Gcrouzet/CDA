@@ -39,5 +39,6 @@ namespace Calculatrice
         {
             textBoxAffichageCalcul.Text += "=" + somme + "+";
         }
+
     }
 }

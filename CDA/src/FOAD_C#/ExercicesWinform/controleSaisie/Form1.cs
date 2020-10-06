@@ -21,8 +21,8 @@ namespace controleSaisie
         private void Effacer_Click(object sender, EventArgs e)
         {
             textNom.Clear();
-            textDate.Clear();
             textMontant.Clear();
+            textDate.Clear();
             textCP.Clear();
         }
 
@@ -40,10 +40,17 @@ namespace controleSaisie
 
         private void Valider_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textNom.Text, @"/ ^[AZa - z] +$/"))
-            {
-                textNom.Clear();
+            bool nomIsOk = Regex.IsMatch(textNom.Text, @"^[A-Za-z]+$");
+            bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9].?[0-9][^-]*$");
+            bool dateIsOk = Regex.IsMatch(textDate.Text, @"^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$");
+            // TODO date supérieur à now .
+            bool cpIsOk = Regex.IsMatch(textCP.Text, @"^[0-9]{5}$");
 
+
+            if (nomIsOk & cpIsOk & montantIsOk & dateIsOk)
+            {
+                Validation valide = new Validation();
+                valide.Show();
             }
 
         }

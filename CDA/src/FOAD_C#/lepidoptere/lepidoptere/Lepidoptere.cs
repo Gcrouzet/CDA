@@ -11,9 +11,9 @@ namespace ClassLibrarylepidoptere
         private StadeDEvolution monStadeCourant;
         private DateTime dateDeNaissance;
 
-        public Lepidoptere(DateTime _dateDeNaissance)
+        public Lepidoptere()
         {
-            dateDeNaissance = _dateDeNaissance;
+            dateDeNaissance = DateTime.Now;
             monStadeCourant = new Oeuf();
         }
         public StadeDEvolution MonStadeCourant

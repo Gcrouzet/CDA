@@ -17,14 +17,20 @@ namespace controleSaisie
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public Validation(string nom, string date, string montant, string cp)
         {
+            InitializeComponent();
+            InitializeComponent2(nom, date, montant, cp);
+        }
+        public void InitializeComponent2(string nom, string date, string montant, string cp)
+        {
+            this.label5.Text = nom;
+            this.label6.Text = date;
+            this.label7.Text = montant;
+            this.label8.Text = cp;
 
         }
 
-        private void textnom_Enter(object sender, EventArgs e)
-        {
-            textnom.Text = "gabriel";
-        }
+
     }
 }

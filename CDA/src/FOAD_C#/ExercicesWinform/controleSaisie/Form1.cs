@@ -13,6 +13,7 @@ namespace controleSaisie
 {
     public partial class controle : Form
     {
+
         public controle()
         {
             InitializeComponent();
@@ -40,18 +41,23 @@ namespace controleSaisie
 
         private void Valider_Click(object sender, EventArgs e)
         {
+            string nom = textNom.Text;
+            string date = textDate.Text;
+            string montant = textMontant.Text;
+            string cp = textCP.Text;
+            var parseDate = DateTime.Parse(textDate.Text);
+
             bool nomIsOk = Regex.IsMatch(textNom.Text, @"^[A-Za-z]+$");
             bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9].?[0-9][^-]*$");
-            bool dateIsOk = Regex.IsMatch(textDate.Text, @"^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$");
-            // TODO date supérieur à now .
+            bool dateIsOk = Regex.IsMatch(textDate.Text, @"^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$") & parseDate > DateTime.Now;
             bool cpIsOk = Regex.IsMatch(textCP.Text, @"^[0-9]{5}$");
 
 
 
             if (nomIsOk & cpIsOk & montantIsOk & dateIsOk)
             {
-                Validation valide = new Validation();
-                valide.Show();
+                Validation valide2 = new Validation(nom, date, montant, cp);
+                valide2.Show();
             }
 
         }

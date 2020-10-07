@@ -167,11 +167,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textNom;
-        private System.Windows.Forms.TextBox textDate;
-        private System.Windows.Forms.TextBox textMontant;
-        private System.Windows.Forms.TextBox textCP;
         private System.Windows.Forms.Button Valider;
         private System.Windows.Forms.Button Effacer;
         private System.Windows.Forms.Label Nom;
@@ -179,6 +174,10 @@
         private System.Windows.Forms.Label Montant;
         private System.Windows.Forms.Label CodePostal;
         private System.Windows.Forms.Label Date2;
+        public System.Windows.Forms.TextBox textDate;
+        public System.Windows.Forms.TextBox textMontant;
+        public System.Windows.Forms.TextBox textCP;
+        public System.Windows.Forms.TextBox textNom;
     }
 }
 

@@ -15,7 +15,7 @@ namespace ClassLibrarylepidoptere
 
         public override StadeDEvolution prochainStade()
         {
-            return new papillon();
+            return this;
         }
     }
 }

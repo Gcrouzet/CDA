@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace controleSaisie
 {
-    public partial class Form3 : Form
+    public partial class FIN : Form
     {
-        public Form3()
+        public FIN()
         {
             InitializeComponent();
+        }
+
+        private void buttonOui_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonNon_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

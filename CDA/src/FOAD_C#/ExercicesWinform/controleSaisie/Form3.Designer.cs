@@ -1,6 +1,6 @@
 ﻿namespace controleSaisie
 {
-    partial class Form3
+    partial class FIN
     {
         /// <summary>
         /// Required designer variable.
@@ -41,15 +41,19 @@
             this.buttonOui.TabIndex = 0;
             this.buttonOui.Text = "Oui";
             this.buttonOui.UseVisualStyleBackColor = true;
+            this.buttonOui.Click += new System.EventHandler(this.buttonOui_Click);
             // 
             // buttonNon
             // 
             this.buttonNon.Location = new System.Drawing.Point(92, 88);
+            this.buttonNon.MaximumSize = new System.Drawing.Size(79, 22);
+            this.buttonNon.MinimumSize = new System.Drawing.Size(79, 22);
             this.buttonNon.Name = "buttonNon";
             this.buttonNon.Size = new System.Drawing.Size(79, 22);
             this.buttonNon.TabIndex = 1;
             this.buttonNon.Text = "Non";
             this.buttonNon.UseVisualStyleBackColor = true;
+            this.buttonNon.Click += new System.EventHandler(this.buttonNon_Click);
             // 
             // label1
             // 
@@ -60,7 +64,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Fin de l\'application";
             // 
-            // Form3
+            // FIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,7 +72,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonNon);
             this.Controls.Add(this.buttonOui);
-            this.Name = "Form3";
+            this.Name = "FIN";
             this.Text = "FIN";
             this.ResumeLayout(false);
             this.PerformLayout();

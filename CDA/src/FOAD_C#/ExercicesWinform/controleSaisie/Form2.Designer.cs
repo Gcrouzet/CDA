@@ -42,11 +42,14 @@
             // buttonOK
             // 
             this.buttonOK.Location = new System.Drawing.Point(71, 144);
+            this.buttonOK.MaximumSize = new System.Drawing.Size(94, 30);
+            this.buttonOK.MinimumSize = new System.Drawing.Size(94, 30);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(94, 30);
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // label1
             // 

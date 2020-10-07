@@ -31,6 +31,10 @@ namespace controleSaisie
 
         }
 
-
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            FIN fin = new FIN();
+            fin.Show();
+        }
     }
 }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ClassLibrarylepidoptere.Chenille">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chenille.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrarylepidoptere.Chrysalide">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chrysalide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrarylepidoptere.Oeuf">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Oeuf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrarylepidoptere.papillon">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>papillon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrarylepidoptere.StadeDEvolution">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StadeDEvolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrarylepidoptere.Lepidoptere">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAACAAAAAAAAAAAEAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Lepidoptere.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="monStadeCourant" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

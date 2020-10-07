@@ -73,16 +73,11 @@ namespace Calculatrice
                     this.textBoxAffichageCalcul.Clear();
                     this.somme = 0;
                     break;
-                case "calculer":
+                case "Calculer":
                     this.textBoxAffichageCalcul.Text += '=' + this.somme.ToString() + '+';
                     break;
 
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

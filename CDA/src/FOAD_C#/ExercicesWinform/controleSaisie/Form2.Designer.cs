@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonOK = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textnom = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,14 +44,15 @@
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // textnom
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nom :";
+            this.textnom.AutoSize = true;
+            this.textnom.Location = new System.Drawing.Point(12, 44);
+            this.textnom.Name = "textnom";
+            this.textnom.Size = new System.Drawing.Size(35, 13);
+            this.textnom.TabIndex = 1;
+            this.textnom.Text = "Nom :";
+            this.textnom.Enter += new System.EventHandler(this.textnom_Enter);
             // 
             // label2
             // 
@@ -89,7 +90,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textnom);
             this.Controls.Add(this.buttonOK);
             this.Name = "Validation";
             this.Text = "Validation effectuée";
@@ -101,7 +102,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label textnom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

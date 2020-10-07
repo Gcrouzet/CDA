@@ -21,5 +21,10 @@ namespace controleSaisie
         {
 
         }
+
+        private void textnom_Enter(object sender, EventArgs e)
+        {
+            textnom.Text = "gabriel";
+        }
     }
 }

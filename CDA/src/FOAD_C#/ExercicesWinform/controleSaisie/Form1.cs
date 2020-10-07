@@ -47,6 +47,7 @@ namespace controleSaisie
             bool cpIsOk = Regex.IsMatch(textCP.Text, @"^[0-9]{5}$");
 
 
+
             if (nomIsOk & cpIsOk & montantIsOk & dateIsOk)
             {
                 Validation valide = new Validation();

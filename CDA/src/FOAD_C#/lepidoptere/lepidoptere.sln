@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrarylepidoptere", "lepidoptere\ClassLibrarylepidoptere.csproj", "{0F3031DC-61A9-4668-98FB-525DED824EE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testlepi", "Testlepi\Testlepi.csproj", "{5DF69B11-4B25-4521-A3E4-FF085DD702DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F3031DC-61A9-4668-98FB-525DED824EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3031DC-61A9-4668-98FB-525DED824EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3031DC-61A9-4668-98FB-525DED824EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3031DC-61A9-4668-98FB-525DED824EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF69B11-4B25-4521-A3E4-FF085DD702DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF69B11-4B25-4521-A3E4-FF085DD702DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF69B11-4B25-4521-A3E4-FF085DD702DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF69B11-4B25-4521-A3E4-FF085DD702DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D39BD057-839A-4B20-9F73-0764BC582C9E}
+	EndGlobalSection
+EndGlobal

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryZoo
 {
-    public class Perroquet : AnimalDuZoo
+    public class Perroquet : AnimalDuZoo, IParler
     {
         public Perroquet(DateTime dateDeNaissance, bool estNeeAuZoo) : base(dateDeNaissance, estNeeAuZoo)
         {
@@ -24,7 +24,7 @@ namespace ClassLibraryZoo
         }
         public override bool Parler()
         {
-            Console.WriteLine("allo les pompiers(perroquet)");
+            Console.WriteLine("allo les pompiers , il y a le zoo qui brûle(perroquet)");
             return true;
         }
     }

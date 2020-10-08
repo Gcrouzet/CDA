@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryZoo
 {
-    public class Gardien : IDeplacable, IParler
+    public class Gardien : IParler, IDeplacable
     {
         public Gardien()
         {
@@ -19,7 +19,7 @@ namespace ClassLibraryZoo
         }
         public bool Parler()
         {
-            Console.WriteLine("allo les pompiers(gardien)");
+            Console.WriteLine("allo les pompiers , le zoo a brûlé(gardien)");
             return true;
         }
     }

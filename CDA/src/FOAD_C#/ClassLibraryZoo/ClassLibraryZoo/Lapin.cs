@@ -26,9 +26,6 @@ namespace ClassLibraryZoo
             Console.WriteLine("Je saute");
             return true;
         }
-        public override bool Parler()
-        {
-            return false;
-        }
+
     }
 }

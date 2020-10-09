@@ -22,7 +22,7 @@ namespace ClassLibraryZoo
             Console.WriteLine("Je vole!");
             return true;
         }
-        public override bool Parler()
+        public bool Parler()
         {
             Console.WriteLine("allo les pompiers , il y a le zoo qui brûle(perroquet)");
             return true;

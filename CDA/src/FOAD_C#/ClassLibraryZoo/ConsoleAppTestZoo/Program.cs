@@ -26,12 +26,10 @@ namespace ConsoleAppTestZoo
             }
             foreach (AnimalDuZoo a in mesAnimauxDuZoo)
             {
-                if (a.Parler())
+                if (a is IParler)
                 {
-                    mesParleurs.Add(a);
+                    mesParleurs.Add((IParler)a);
                 }
-
-
             }
 
             mesParleurs.Add(georges);

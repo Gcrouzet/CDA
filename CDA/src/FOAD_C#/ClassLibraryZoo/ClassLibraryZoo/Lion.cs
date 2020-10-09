@@ -22,10 +22,6 @@ namespace ClassLibraryZoo
             Console.WriteLine("Je marche lentemmment");
             return true;
         }
-        public override bool Parler()
-        {
-            Console.WriteLine("graou");
-            return false;
-        }
+
     }
 }

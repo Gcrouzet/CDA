@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryZoo
 {
-    public abstract class AnimalDuZoo : IDeplacable, IComparable<AnimalDuZoo>, IParler
+    public abstract class AnimalDuZoo : IDeplacable, IComparable<AnimalDuZoo>
     {
         private DateTime dateDeNaissance;
         bool estNeeAuZoo;
@@ -37,7 +37,7 @@ namespace ClassLibraryZoo
         }
 
         public abstract bool SeDeplacer();
-        public abstract bool Parler();
+
 
 
 

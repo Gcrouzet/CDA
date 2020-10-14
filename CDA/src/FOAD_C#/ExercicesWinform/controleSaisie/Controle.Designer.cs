@@ -1,6 +1,6 @@
 ﻿namespace controleSaisie
 {
-    partial class controle
+    partial class Controle
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textNom = new System.Windows.Forms.TextBox();
             this.textDate = new System.Windows.Forms.TextBox();
             this.textMontant = new System.Windows.Forms.TextBox();
@@ -39,6 +40,14 @@
             this.Montant = new System.Windows.Forms.Label();
             this.CodePostal = new System.Windows.Forms.Label();
             this.Date2 = new System.Windows.Forms.Label();
+            this.errorProviderNom = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMontant = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCP = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMontant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCP)).BeginInit();
             this.SuspendLayout();
             // 
             // textNom
@@ -141,7 +150,25 @@
             this.Date2.TabIndex = 10;
             this.Date2.Text = "(JJ/MM/AAAA)";
             // 
-            // controle
+            // errorProviderNom
+            // 
+            this.errorProviderNom.ContainerControl = this;
+            this.errorProviderNom.DataMember = "";
+            // 
+            // errorProviderDate
+            // 
+            this.errorProviderDate.ContainerControl = this;
+            this.errorProviderDate.DataMember = "";
+            // 
+            // errorProviderMontant
+            // 
+            this.errorProviderMontant.ContainerControl = this;
+            // 
+            // errorProviderCP
+            // 
+            this.errorProviderCP.ContainerControl = this;
+            // 
+            // Controle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,9 +185,13 @@
             this.Controls.Add(this.textDate);
             this.Controls.Add(this.textNom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "controle";
+            this.Name = "Controle";
             this.Text = "Les contrôles";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.controle_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMontant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +209,10 @@
         public System.Windows.Forms.TextBox textMontant;
         public System.Windows.Forms.TextBox textCP;
         public System.Windows.Forms.TextBox textNom;
+        private System.Windows.Forms.ErrorProvider errorProviderNom;
+        private System.Windows.Forms.ErrorProvider errorProviderDate;
+        private System.Windows.Forms.ErrorProvider errorProviderMontant;
+        private System.Windows.Forms.ErrorProvider errorProviderCP;
     }
 }
 

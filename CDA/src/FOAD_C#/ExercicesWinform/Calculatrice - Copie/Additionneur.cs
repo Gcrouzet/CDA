@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Calculatrice
 {
-    public partial class Form1 : Form
+    public partial class Additionneur : Form
     {
         private int somme = 0;
 
-        public Form1()
+        public Additionneur()
         {
             InitializeComponent();
 
@@ -23,9 +23,9 @@ namespace Calculatrice
         private void button0_Click(object sender, EventArgs e)
         {
             Button buttonNumber = (Button)sender;
-            int buttonValue = int.Parse(buttonNumber.Text);
-            this.textBoxAffichageCalcul.Text += buttonValue + "+";
-            this.somme += buttonValue;
+            int buttonValue = Int32.Parse(buttonNumber.Tag.ToString());
+            textBoxAffichageCalcul.Text += buttonValue + "+";
+            somme += buttonValue;
 
         }
 

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Calculatrice
 {
-    public partial class Form1 : Form
+    public partial class Additionneur : Form
     {
         private int somme = 0;
 
-        public Form1()
+        public Additionneur()
         {
             InitializeComponent();
         }
@@ -78,6 +78,11 @@ namespace Calculatrice
                     break;
 
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

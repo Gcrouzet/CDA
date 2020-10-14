@@ -157,10 +157,10 @@
             this.Controls.Add(this.textMontant);
             this.Controls.Add(this.textDate);
             this.Controls.Add(this.textNom);
-            this.MaximumSize = new System.Drawing.Size(463, 359);
-            this.MinimumSize = new System.Drawing.Size(463, 359);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "controle";
             this.Text = "Les contrôles";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.controle_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

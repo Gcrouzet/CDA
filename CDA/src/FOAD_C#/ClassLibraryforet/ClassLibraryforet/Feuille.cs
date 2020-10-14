@@ -12,6 +12,12 @@ namespace ClassLibraryforet
         EnumCouleur couleur;
         EnumFormeFeuille forme;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_nbNervures"></param>
+        /// <param name="_couleur"></param>
+        /// <param name="_forme"></param>
         public Feuille(int _nbNervures, EnumCouleur _couleur, EnumFormeFeuille _forme)
         {
             this.nbNervures = _nbNervures;
@@ -34,7 +40,9 @@ namespace ClassLibraryforet
         {
             return base.ToString() + "\nNombre de nervures : " + nbNervures + "\nCouleur : " + couleur + "\nForme : " + forme;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void CouleursAutomne()
         {
             switch (couleur)

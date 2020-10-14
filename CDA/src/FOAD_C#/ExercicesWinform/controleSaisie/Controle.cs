@@ -21,8 +21,9 @@ namespace controleSaisie
             InitializeComponent();
         }
 
+
         /// <summary>
-        /// Bouton pour clear les texts boxs
+        /// Bouton pour clear les texts boxs et les icones d'erreurs
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -32,6 +33,10 @@ namespace controleSaisie
             textMontant.Clear();
             textDate.Clear();
             textCP.Clear();
+            errorProvidertextbox.SetError(textNom, null);
+            errorProvidertextbox.SetError(textDate, null);
+            errorProvidertextbox.SetError(textMontant, null);
+            errorProvidertextbox.SetError(textCP, null);
         }
         /// <summary>
         /// Check pour rendre les champs obligatoires
@@ -66,7 +71,7 @@ namespace controleSaisie
                 else
                 {
                     textDate.Focus();
-                    errorProviderDate.SetError(textDate, "La date est antérieur à aujourd'hui");
+                    errorProvidertextbox.SetError(textDate, "La date est antérieur à aujourd'hui");
                     SystemSounds.Exclamation.Play();
                     return false;
                 }
@@ -74,7 +79,7 @@ namespace controleSaisie
             else
             {
                 textDate.Focus();
-                errorProviderDate.SetError(textDate, "Ce n'est pas une date");
+                errorProvidertextbox.SetError(textDate, "Ce n'est pas une date");
                 SystemSounds.Exclamation.Play();
                 return false;
             }
@@ -95,6 +100,7 @@ namespace controleSaisie
             string montant = textMontant.Text;
             string cp = textCP.Text;
 
+            // bool pour tester les regex
 
             bool nomIsOk = Regex.IsMatch(textNom.Text, @"^[A-Za-z]+$");
             bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9]*.?[0-9][^-]*$");
@@ -102,25 +108,41 @@ namespace controleSaisie
             bool dateIsOk = this.ValidDate();
 
 
-            if (nomIsOk == false)
-            {
-                textNom.Focus();
-                //textNom.Text = "ce n'est pas un nom";
-                errorProviderNom.SetError(textNom, "Ce n'est pas un nom");
-                SystemSounds.Exclamation.Play();
-            }
-            if (montantIsOk == false)
-            {
-                textMontant.Focus();
-                errorProviderMontant.SetError(textMontant, "Ce n'est pas un montant");
-                SystemSounds.Exclamation.Play();
-            }
+            // reset bouton d'erreur en appuyant sur le bouton "valider"
+
+            errorProvidertextbox.SetError(textNom, null);
+            errorProvidertextbox.SetError(textDate, null);
+            errorProvidertextbox.SetError(textMontant, null);
+            errorProvidertextbox.SetError(textCP, null);
+
+
+           
+           
             if (cpIsOk == false)
             {
                 textCP.Focus();
-                errorProviderCP.SetError(textCP, "Ce n'est pas un code postal");
+                errorProvidertextbox.SetError(textCP, "Ce n'est pas un code postal");
+                SystemSounds.Exclamation.Play();
+            } 
+
+            //  check montant est un nombre
+            if (montantIsOk == false)
+            {
+                textMontant.Focus();
+                errorProvidertextbox.SetError(textMontant, "Ce n'est pas un montant");
+                SystemSounds.Exclamation.Play();
+            } 
+
+
+            // check nom n'est composé que de lettre
+            if (nomIsOk == false)
+            {
+                textNom.Focus();
+                errorProvidertextbox.SetError(textNom, "Ce n'est pas un nom");
                 SystemSounds.Exclamation.Play();
             }
+
+            // Check tout est bon 
             if (nomIsOk & montantIsOk & dateIsOk & cpIsOk)
             {
                 Validation valide = new Validation(nom, date, montant, cp);

@@ -3,12 +3,12 @@
   <Class Name="controleSaisie.Controle">
     <Position X="0.5" Y="0.5" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>AEAAJAwAACAAAAAAAgSAAAQCICAAAQQDAhgIAAAgAAA=</HashCode>
+      <HashCode>AEAABAwAACAAAAAAAgSAAAQCACAAAQSBAhAIAAAgAAA=</HashCode>
       <FileName>Controle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="controleSaisie.Validation">
-    <Position X="5.5" Y="1.25" Width="5" />
+    <Position X="6.5" Y="1" Width="5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAACAAAECgEACCAAACAAAEAAAKAAQAAAEAAAQ=</HashCode>
       <FileName>Validation.cs</FileName>

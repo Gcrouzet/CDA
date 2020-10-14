@@ -40,14 +40,8 @@
             this.Montant = new System.Windows.Forms.Label();
             this.CodePostal = new System.Windows.Forms.Label();
             this.Date2 = new System.Windows.Forms.Label();
-            this.errorProviderNom = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderDate = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderMontant = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderCP = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMontant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCP)).BeginInit();
+            this.errorProvidertextbox = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidertextbox)).BeginInit();
             this.SuspendLayout();
             // 
             // textNom
@@ -150,23 +144,10 @@
             this.Date2.TabIndex = 10;
             this.Date2.Text = "(JJ/MM/AAAA)";
             // 
-            // errorProviderNom
+            // errorProvidertextbox
             // 
-            this.errorProviderNom.ContainerControl = this;
-            this.errorProviderNom.DataMember = "";
-            // 
-            // errorProviderDate
-            // 
-            this.errorProviderDate.ContainerControl = this;
-            this.errorProviderDate.DataMember = "";
-            // 
-            // errorProviderMontant
-            // 
-            this.errorProviderMontant.ContainerControl = this;
-            // 
-            // errorProviderCP
-            // 
-            this.errorProviderCP.ContainerControl = this;
+            this.errorProvidertextbox.ContainerControl = this;
+            this.errorProvidertextbox.DataMember = "";
             // 
             // Controle
             // 
@@ -188,10 +169,7 @@
             this.Name = "Controle";
             this.Text = "Les contrôles";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.controle_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMontant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidertextbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,10 +187,7 @@
         public System.Windows.Forms.TextBox textMontant;
         public System.Windows.Forms.TextBox textCP;
         public System.Windows.Forms.TextBox textNom;
-        private System.Windows.Forms.ErrorProvider errorProviderNom;
-        private System.Windows.Forms.ErrorProvider errorProviderDate;
-        private System.Windows.Forms.ErrorProvider errorProviderMontant;
-        private System.Windows.Forms.ErrorProvider errorProviderCP;
+        private System.Windows.Forms.ErrorProvider errorProvidertextbox;
     }
 }
 

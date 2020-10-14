@@ -59,7 +59,6 @@
             this.labelNom.Size = new System.Drawing.Size(35, 13);
             this.labelNom.TabIndex = 1;
             this.labelNom.Text = "Nom :";
-            this.labelNom.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelDate
             // 

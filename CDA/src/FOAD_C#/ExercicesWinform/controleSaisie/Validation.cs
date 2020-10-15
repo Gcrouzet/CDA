@@ -17,7 +17,7 @@ namespace controleSaisie
             InitializeComponent();
         }
         /// <summary>
-        /// transfere les données de la premiere form dans la deuxieme
+        /// transfere les donnees de la premiere form dans la deuxieme
         /// </summary>
         /// <param name="nom"></param>
         /// <param name="date"></param>
@@ -29,7 +29,7 @@ namespace controleSaisie
             InitializeComponent2(nom, date, montant, cp);
         }
         /// <summary>
-        /// Rentre les données de la premiere form dans la deuxieme
+        /// Rentre les donnees de la premiere form dans la deuxieme
         /// </summary>
         /// <param name="nom"></param>
         /// <param name="date"></param>
@@ -53,6 +53,6 @@ namespace controleSaisie
             Application.Exit();
         }
 
-       
+
     }
 }

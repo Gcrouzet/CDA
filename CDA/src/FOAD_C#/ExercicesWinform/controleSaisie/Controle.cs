@@ -134,7 +134,7 @@ namespace controleSaisie
             }
 
 
-            // check nom n'est composé que de lettre
+            // check nom n'est compose que de lettre
             if (nomIsOk == false)
             {
                 textNom.Focus();

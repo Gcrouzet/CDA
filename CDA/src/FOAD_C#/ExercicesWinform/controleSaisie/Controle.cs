@@ -118,11 +118,6 @@ namespace controleSaisie
             }
 
 
-
-
-
-
-
             // check nom n'est compose que de lettre
             if (nomIsOk == false)
             {

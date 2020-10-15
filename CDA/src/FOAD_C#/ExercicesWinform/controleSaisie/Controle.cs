@@ -105,7 +105,7 @@ namespace controleSaisie
             bool nomIsOk = Regex.IsMatch(textNom.Text, @"^[A-Za-z]+$");
             bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9]+(\.[0-9]+)?$");
             bool cpIsOk = Regex.IsMatch(textCP.Text, @"^[0-9]{5}$");
-            bool dateIsOk = this.ValidDate();
+            bool dateIsOk = ValidDate();
 
 
             // reset bouton d'erreur en appuyant sur le bouton "valider"
@@ -151,15 +151,6 @@ namespace controleSaisie
 
 
         }
-
-        //if (nomIsOk & cpIsOk & montantIsOk & dateIsOk)
-        //{
-
-        //    Validation valide = new Validation(nom, date, montant, cp);
-        //    valide.Show();
-        //}
-
-        //}
 
 
 

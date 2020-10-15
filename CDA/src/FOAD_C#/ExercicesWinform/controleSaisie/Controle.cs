@@ -103,7 +103,7 @@ namespace controleSaisie
             // bool pour tester les regex
 
             bool nomIsOk = Regex.IsMatch(textNom.Text, @"^[A-Za-z]+$");
-            bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9]*.?[0-9][^-]*$");
+            bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9]+(\.[0-9]+)?$");
             bool cpIsOk = Regex.IsMatch(textCP.Text, @"^[0-9]{5}$");
             bool dateIsOk = this.ValidDate();
 
@@ -116,14 +116,14 @@ namespace controleSaisie
             errorProvidertextbox.SetError(textCP, null);
 
 
-           
-           
+
+
             if (cpIsOk == false)
             {
                 textCP.Focus();
                 errorProvidertextbox.SetError(textCP, "Ce n'est pas un code postal");
                 SystemSounds.Exclamation.Play();
-            } 
+            }
 
             //  check montant est un nombre
             if (montantIsOk == false)
@@ -131,7 +131,7 @@ namespace controleSaisie
                 textMontant.Focus();
                 errorProvidertextbox.SetError(textMontant, "Ce n'est pas un montant");
                 SystemSounds.Exclamation.Play();
-            } 
+            }
 
 
             // check nom n'est composé que de lettre

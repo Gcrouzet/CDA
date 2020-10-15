@@ -115,7 +115,7 @@ namespace controleSaisie
                 }
             }
 
-
+            string validOut = "Nom :  " + textnom + "\nDate :   " + textdate + "\nMontant :   " + textmontant.ToString() + "\nCP :   " + textcp.ToString();
 
             // check nom n'est compose que de lettre
             if (nomIsOk == false)
@@ -127,8 +127,7 @@ namespace controleSaisie
             // Check tout est bon 
             if (nomIsOk & montantIsOk & dateIsOk & cpIsOk)
             {
-                Validation valide = new Validation(textnom, textdate, textmontant, textcp);
-                valide.Show();
+                MessageBox.Show(validOut, "Validation éffectuée");
                 DateTime date = DateTime.Parse(textdate);
                 float montant = float.Parse(textmontant);
                 Facture facture = new Facture(textnom, date, montant, textcp);

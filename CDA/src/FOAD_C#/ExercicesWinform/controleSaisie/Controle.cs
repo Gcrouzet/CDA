@@ -69,8 +69,6 @@ namespace controleSaisie
             string textcp = textCP.Text;
 
 
-
-
             // bool pour tester les regex
 
             bool nomIsOk = Verification.ValidNom(textnom);
@@ -86,42 +84,44 @@ namespace controleSaisie
             // check code postal
             if (cpIsOk == false)
             {
-                Verification.ErreurSaisie(textCP, errorProvidertextbox);
+                errorProvidertextbox.SetError(textCP, "Ce n'est pas un" + textCP.Tag.ToString());
+                Verification.ErreurSaisie(textCP);
             }
 
 
             //  check montant est un nombre
             if (montantIsOk == false)
             {
-                Verification.ErreurSaisie(textMontant, errorProvidertextbox);
+                errorProvidertextbox.SetError(textMontant, "Ce n'est pas un" + textMontant.Tag.ToString());
+                Verification.ErreurSaisie(textMontant);
             }
+
 
             // check date anterieur à aujourd'hui
             if (dateIsOk == false)
             {
-                // check date anterieur à aujourd'hui
-                if (dateIsOk == false)
+                errorProvidertextbox.SetError(textDate, "Ce n'est pas un" + textDate.Tag.ToString());
+                Verification.ErreurSaisie(textDate);
+            }
+            else
+            {
+                var parseDate = DateTime.Parse(textdate);
+                if (parseDate <= DateTime.Now)
                 {
-                    Verification.ErreurSaisie(textDate, errorProvidertextbox);
-                }
-                else
-                {
-                    var parseDate = DateTime.Parse(textdate);
-                    if (parseDate <= DateTime.Now)
-                    {
-                        textDate.Focus();
-                        errorProvidertextbox.SetError(textDate, "La date est antérieur à aujourd'hui");
-                        SystemSounds.Exclamation.Play();
-                        dateIsOk = false;
-                    }
+                    textDate.Focus();
+                    errorProvidertextbox.SetError(textDate, "La date est antérieur à aujourd'hui");
+                    SystemSounds.Exclamation.Play();
+                    dateIsOk = false;
                 }
             }
+
 
 
             // check nom n'est compose que de lettre
             if (nomIsOk == false)
             {
-                Verification.ErreurSaisie(textNom, errorProvidertextbox);
+                errorProvidertextbox.SetError(textNom, "Ce n'est pas un" + textNom.Tag.ToString());
+                Verification.ErreurSaisie(textNom);
             }
 
             // Check tout est bon 

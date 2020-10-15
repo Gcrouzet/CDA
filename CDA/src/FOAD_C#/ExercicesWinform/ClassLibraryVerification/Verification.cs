@@ -62,10 +62,9 @@ namespace ClassLibraryVerification
         /// </summary>
         /// <param name="textbox"></param>
         /// <param name="erreur"></param>
-        public static void ErreurSaisie(TextBox textbox, ErrorProvider erreur)
+        public static void ErreurSaisie(TextBox textbox)
         {
             textbox.Focus();
-            erreur.SetError(textbox, "Ce n'est pas un" + textbox.Tag.ToString());
             SystemSounds.Exclamation.Play();
         }
     }

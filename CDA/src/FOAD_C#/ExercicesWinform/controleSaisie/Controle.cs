@@ -33,10 +33,7 @@ namespace controleSaisie
             textMontant.Clear();
             textDate.Clear();
             textCP.Clear();
-            errorProvidertextbox.SetError(textNom, null);
-            errorProvidertextbox.SetError(textDate, null);
-            errorProvidertextbox.SetError(textMontant, null);
-            errorProvidertextbox.SetError(textCP, null);
+            errorProvidertextbox.Clear();
         }
         /// <summary>
         /// Check pour rendre les champs obligatoires
@@ -110,12 +107,7 @@ namespace controleSaisie
 
             // reset bouton d'erreur en appuyant sur le bouton "valider"
 
-            errorProvidertextbox.SetError(textNom, null);
-            errorProvidertextbox.SetError(textDate, null);
-            errorProvidertextbox.SetError(textMontant, null);
-            errorProvidertextbox.SetError(textCP, null);
-
-
+            errorProvidertextbox.Clear();
 
 
             if (cpIsOk == false)

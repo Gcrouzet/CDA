@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClassLibraryFacture;
+using ClassLibraryVerification;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,37 +53,6 @@ namespace controleSaisie
                 Valider.Enabled = false;
             }
         }
-        /// <summary>
-        /// Validation de la date
-        /// </summary>
-        /// <returns></returns>
-        private bool ValidDate()
-        {
-            bool dateIsOk = Regex.IsMatch(textDate.Text, @"^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$");
-            if (dateIsOk)
-            {
-                var parseDate = DateTime.Parse(textDate.Text);
-                if (parseDate > DateTime.Now)
-                {
-                    return true;
-                }
-                else
-                {
-                    textDate.Focus();
-                    errorProvidertextbox.SetError(textDate, "La date est antérieur à aujourd'hui");
-                    SystemSounds.Exclamation.Play();
-                    return false;
-                }
-            }
-            else
-            {
-                textDate.Focus();
-                errorProvidertextbox.SetError(textDate, "Ce n'est pas une date");
-                SystemSounds.Exclamation.Play();
-                return false;
-            }
-
-        }
 
 
 
@@ -92,59 +63,85 @@ namespace controleSaisie
         /// < param name="e"></param>
         private void Valider_Click(object sender, EventArgs e)
         {
-            string nom = textNom.Text;
-            string date = textDate.Text;
-            string montant = textMontant.Text;
-            string cp = textCP.Text;
+            string textnom = textNom.Text;
+            string textdate = textDate.Text;
+            string textmontant = textMontant.Text;
+            string textcp = textCP.Text;
+
+
+
 
             // bool pour tester les regex
 
-            bool nomIsOk = Regex.IsMatch(textNom.Text, @"^[A-Za-z]+$");
-            bool montantIsOk = Regex.IsMatch(textMontant.Text, @"^[0-9]+(\.[0-9]+)?$");
-            bool cpIsOk = Regex.IsMatch(textCP.Text, @"^[0-9]{5}$");
-            bool dateIsOk = ValidDate();
+            bool nomIsOk = Verification.ValidNom(textnom);
+            bool montantIsOk = Verification.ValidMontant(textmontant);
+            bool cpIsOk = Verification.ValidCP(textcp);
+            bool dateIsOk = Verification.ValidDate(textdate);
 
 
             // reset bouton d'erreur en appuyant sur le bouton "valider"
 
             errorProvidertextbox.Clear();
 
-
+            // check code postal
             if (cpIsOk == false)
             {
-                textCP.Focus();
-                errorProvidertextbox.SetError(textCP, "Ce n'est pas un code postal");
-                SystemSounds.Exclamation.Play();
+                Verification.ErreurSaisie(textCP, errorProvidertextbox);
             }
+
 
             //  check montant est un nombre
             if (montantIsOk == false)
             {
-                textMontant.Focus();
-                errorProvidertextbox.SetError(textMontant, "Ce n'est pas un montant");
-                SystemSounds.Exclamation.Play();
+                Verification.ErreurSaisie(textMontant, errorProvidertextbox);
             }
+
+            // check date anterieur à aujourd'hui
+            if (dateIsOk == false)
+            {
+                // check date anterieur à aujourd'hui
+                if (dateIsOk == false)
+                {
+                    Verification.ErreurSaisie(textDate, errorProvidertextbox);
+                }
+                else
+                {
+                    var parseDate = DateTime.Parse(textdate);
+                    if (parseDate <= DateTime.Now)
+                    {
+                        textDate.Focus();
+                        errorProvidertextbox.SetError(textDate, "La date est antérieur à aujourd'hui");
+                        SystemSounds.Exclamation.Play();
+                        dateIsOk = false;
+                    }
+                }
+            }
+
+
+
+
+
 
 
             // check nom n'est compose que de lettre
             if (nomIsOk == false)
             {
-                textNom.Focus();
-                errorProvidertextbox.SetError(textNom, "Ce n'est pas un nom");
-                SystemSounds.Exclamation.Play();
+                Verification.ErreurSaisie(textNom, errorProvidertextbox);
             }
 
             // Check tout est bon 
             if (nomIsOk & montantIsOk & dateIsOk & cpIsOk)
             {
-                Validation valide = new Validation(nom, date, montant, cp);
+                Validation valide = new Validation(textnom, textdate, textmontant, textcp);
                 valide.Show();
+                DateTime date = DateTime.Parse(textdate);
+                float montant = float.Parse(textmontant);
+                Facture facture = new Facture(textnom, date, montant, textcp);
+                facture.ToString();
             }
 
 
         }
-
-
 
 
         /// <summary>

@@ -39,7 +39,6 @@
             this.Date = new System.Windows.Forms.Label();
             this.Montant = new System.Windows.Forms.Label();
             this.CodePostal = new System.Windows.Forms.Label();
-            this.Date2 = new System.Windows.Forms.Label();
             this.errorProvidertextbox = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidertextbox)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +50,7 @@
             this.textNom.Name = "textNom";
             this.textNom.Size = new System.Drawing.Size(173, 20);
             this.textNom.TabIndex = 0;
+            this.textNom.Tag = " nom";
             this.textNom.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textDate
@@ -59,6 +59,7 @@
             this.textDate.Name = "textDate";
             this.textDate.Size = new System.Drawing.Size(124, 20);
             this.textDate.TabIndex = 1;
+            this.textDate.Tag = "e date";
             this.textDate.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textMontant
@@ -67,6 +68,7 @@
             this.textMontant.Name = "textMontant";
             this.textMontant.Size = new System.Drawing.Size(124, 20);
             this.textMontant.TabIndex = 2;
+            this.textMontant.Tag = " montant";
             this.textMontant.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textCP
@@ -76,6 +78,7 @@
             this.textCP.Name = "textCP";
             this.textCP.Size = new System.Drawing.Size(100, 20);
             this.textCP.TabIndex = 3;
+            this.textCP.Tag = " code postal";
             this.textCP.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // Valider
@@ -135,15 +138,6 @@
             this.CodePostal.TabIndex = 9;
             this.CodePostal.Text = "Code Postal";
             // 
-            // Date2
-            // 
-            this.Date2.AutoSize = true;
-            this.Date2.Location = new System.Drawing.Point(258, 130);
-            this.Date2.Name = "Date2";
-            this.Date2.Size = new System.Drawing.Size(79, 13);
-            this.Date2.TabIndex = 10;
-            this.Date2.Text = "(JJ/MM/AAAA)";
-            // 
             // errorProvidertextbox
             // 
             this.errorProvidertextbox.ContainerControl = this;
@@ -154,7 +148,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 320);
-            this.Controls.Add(this.Date2);
             this.Controls.Add(this.CodePostal);
             this.Controls.Add(this.Montant);
             this.Controls.Add(this.Date);
@@ -182,7 +175,6 @@
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label Montant;
         private System.Windows.Forms.Label CodePostal;
-        private System.Windows.Forms.Label Date2;
         public System.Windows.Forms.TextBox textDate;
         public System.Windows.Forms.TextBox textMontant;
         public System.Windows.Forms.TextBox textCP;

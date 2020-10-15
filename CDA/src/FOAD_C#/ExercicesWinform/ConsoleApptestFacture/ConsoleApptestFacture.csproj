@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD26132D-879D-4B61-9B26-3EA69C1B0AFB}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>controleSaisie</RootNamespace>
-    <AssemblyName>controleSaisie</AssemblyName>
+    <ProjectGuid>{2358AAAE-923D-4B85-AD22-9FDFCB00C6B2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApptestFacture</RootNamespace>
+    <AssemblyName>ConsoleApptestFacture</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,52 +39,12 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controle.Designer.cs">
-      <DependentUpon>Controle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Validation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Validation.Designer.cs">
-      <DependentUpon>Validation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controle.resx">
-      <DependentUpon>Controle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Validation.resx">
-      <DependentUpon>Validation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -97,6 +57,10 @@
     <ProjectReference Include="..\ClassLibraryVerification\ClassLibraryVerification.csproj">
       <Project>{4367a8b4-8bc7-43b4-9cb8-799ff3c95e70}</Project>
       <Name>ClassLibraryVerification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\controleSaisie\controleSaisie.csproj">
+      <Project>{cd26132d-879d-4b61-9b26-3ea69c1b0afb}</Project>
+      <Name>controleSaisie</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

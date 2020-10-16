@@ -24,6 +24,7 @@ namespace controleSaisie
         }
 
 
+
         /// <summary>
         /// Bouton pour clear les texts boxs et les icones d'erreurs
         /// </summary>
@@ -75,7 +76,6 @@ namespace controleSaisie
             bool montantIsOk = Verification.ValidMontant(textmontant);
             bool cpIsOk = Verification.ValidCP(textcp);
             bool dateIsOk = Verification.ValidDate(textdate);
-
 
             // reset bouton d'erreur en appuyant sur le bouton "valider"
 
@@ -154,7 +154,61 @@ namespace controleSaisie
                 e.Cancel = true;
         }
 
+        private void textNom_Leave(object sender, EventArgs e)
+        {
+            bool nomIsOk = Verification.ValidNom(textNom.Text);
+            if (nomIsOk == false)
+            {
+                errorProvidertextbox.SetError(textNom, "Ce n'est pas un" + textNom.Tag.ToString());
+                Verification.ErreurSaisie(textNom);
+            }
+            else
+            {
+                errorProvidertextbox.Clear();
+            }
+        }
 
+        private void textDate_Leave(object sender, EventArgs e)
+        {
+            bool dateIsOk = Verification.ValidDate(textDate.Text);
+            if (dateIsOk == false)
+            {
+                errorProvidertextbox.SetError(textDate, "Ce n'est pas un" + textDate.Tag.ToString());
+                Verification.ErreurSaisie(textDate);
+            }
+            else
+            {
+                errorProvidertextbox.Clear();
+            }
+        }
+
+        private void textMontant_Leave(object sender, EventArgs e)
+        {
+            bool montantIsOk = Verification.ValidDate(textMontant.Text);
+            if (montantIsOk == false)
+            {
+                errorProvidertextbox.SetError(textMontant, "Ce n'est pas un" + textMontant.Tag.ToString());
+                Verification.ErreurSaisie(textMontant);
+            }
+            else
+            {
+                errorProvidertextbox.Clear();
+            }
+        }
+
+        private void textCP_Leave(object sender, EventArgs e)
+        {
+            bool cpIsOk = Verification.ValidCP(textCP.Text);
+            if (cpIsOk == false)
+            {
+                errorProvidertextbox.SetError(textCP, "Ce n'est pas un" + textCP.Tag.ToString());
+                Verification.ErreurSaisie(textCP);
+            }
+            else
+            {
+                errorProvidertextbox.Clear();
+            }
+        }
     }
 }
 

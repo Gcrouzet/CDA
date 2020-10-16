@@ -52,6 +52,7 @@
             this.textNom.TabIndex = 0;
             this.textNom.Tag = " nom";
             this.textNom.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textNom.Leave += new System.EventHandler(this.textNom_Leave);
             // 
             // textDate
             // 
@@ -61,6 +62,7 @@
             this.textDate.TabIndex = 1;
             this.textDate.Tag = "e date";
             this.textDate.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textDate.Leave += new System.EventHandler(this.textDate_Leave);
             // 
             // textMontant
             // 
@@ -70,6 +72,7 @@
             this.textMontant.TabIndex = 2;
             this.textMontant.Tag = " montant";
             this.textMontant.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textMontant.Leave += new System.EventHandler(this.textMontant_Leave);
             // 
             // textCP
             // 
@@ -80,6 +83,7 @@
             this.textCP.TabIndex = 3;
             this.textCP.Tag = " code postal";
             this.textCP.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.textCP.Leave += new System.EventHandler(this.textCP_Leave);
             // 
             // Valider
             // 
@@ -160,6 +164,7 @@
             this.Controls.Add(this.textNom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Controle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les contrôles";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.controle_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidertextbox)).EndInit();

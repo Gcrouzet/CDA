@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryFacture", "Clas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryVerification", "ClassLibraryVerification\ClassLibraryVerification.csproj", "{4367A8B4-8BC7-43B4-9CB8-799FF3C95E70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsCheckBox", "WindowsFormsCheckBox\WindowsFormsCheckBox.csproj", "{4D124BCB-3365-49A3-9F3D-CCA270A50561}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppListBox", "WindowsFormsAppListBox\WindowsFormsAppListBox.csproj", "{AC9D133A-B9A3-4D28-A035-192F13F4D25A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{4367A8B4-8BC7-43B4-9CB8-799FF3C95E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4367A8B4-8BC7-43B4-9CB8-799FF3C95E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4367A8B4-8BC7-43B4-9CB8-799FF3C95E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D124BCB-3365-49A3-9F3D-CCA270A50561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D124BCB-3365-49A3-9F3D-CCA270A50561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D124BCB-3365-49A3-9F3D-CCA270A50561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D124BCB-3365-49A3-9F3D-CCA270A50561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9D133A-B9A3-4D28-A035-192F13F4D25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9D133A-B9A3-4D28-A035-192F13F4D25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9D133A-B9A3-4D28-A035-192F13F4D25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9D133A-B9A3-4D28-A035-192F13F4D25A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

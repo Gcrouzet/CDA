@@ -14,6 +14,9 @@ namespace ClassLibraryVerification
         // regex en constante de nom et code postal
         private const string regexNom = @"^[A-Za-z]+$";
         private const string regexCp = @"^(?:[0-8]\d|9[0-8])\d{3}$";
+        private const string regexPrenom = @"^[a-z]+[ \-']?[[a-z]+[ \-']?]*[a-z]+$";
+        private const string regexChiffre = @"^[1-9]$";
+
 
 
         /// <summary>
@@ -60,6 +63,10 @@ namespace ClassLibraryVerification
             }
 
         }
+        public static bool ValidChiffre(string _chiffre)
+        {
+            return Regex.IsMatch(_chiffre, regexChiffre);
+        }
         /// <summary>
         ///  Valide le code postal
         /// </summary>
@@ -79,6 +86,16 @@ namespace ClassLibraryVerification
         {
             textbox.Focus();
             SystemSounds.Exclamation.Play();
+        }
+        /// <summary>
+        /// Valide le prenom
+        /// </summary>
+        /// <param name="_nom"></param>
+        /// <returns></returns>
+        public static bool ValidPrenom(string _prenom)
+        {
+            return Regex.IsMatch(_prenom, regexPrenom);
+
         }
     }
 

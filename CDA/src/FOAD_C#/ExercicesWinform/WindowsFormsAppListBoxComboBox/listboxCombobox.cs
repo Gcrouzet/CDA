@@ -1,9 +1,12 @@
-﻿using System;
+﻿using ClassLibraryVerification;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,15 +35,27 @@ namespace WindowsFormsAppListBoxComboBox
         {
             if (comboBox1.SelectedIndex == -1)
             {
-                listBox1.Items.Add(comboBox1.Text);
-                comboBox1.Text = "";
+                bool paysIsOk = Verification.ValidNom(comboBox1.Text);
+                if (paysIsOk == true)
+                {
+                    errorProvider1.Clear();
+                    listBox1.Items.Add(comboBox1.Text);
+                    comboBox1.Text = "";
+                }
+                else
+                {
+                    errorProvider1.SetError(comboBox1, "inserez le nom d un pays");
+                }
             }
             else
             {
+
                 listBox1.Items.Add(comboBox1.SelectedItem);
                 comboBox1.Items.Remove(comboBox1.SelectedItem);
             }
+
         }
+
 
         private void buttonToutAjouter_Click(object sender, EventArgs e)
         {
@@ -119,6 +134,8 @@ namespace WindowsFormsAppListBoxComboBox
             if (listBox1.SelectedIndex == -1)
             {
                 buttonEnlever.Enabled = false;
+                buttonFlecheHaut.Enabled = false;
+                buttonFlecheBas.Enabled = false;
             }
             else
             {

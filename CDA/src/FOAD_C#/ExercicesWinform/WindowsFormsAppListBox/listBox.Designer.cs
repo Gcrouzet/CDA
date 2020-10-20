@@ -95,9 +95,9 @@
             // 
             this.buttonAjout.Location = new System.Drawing.Point(16, 95);
             this.buttonAjout.Name = "buttonAjout";
-            this.buttonAjout.Size = new System.Drawing.Size(75, 23);
+            this.buttonAjout.Size = new System.Drawing.Size(100, 23);
             this.buttonAjout.TabIndex = 4;
-            this.buttonAjout.Text = "Ajout Liste";
+            this.buttonAjout.Text = "Ajout liste";
             this.buttonAjout.UseVisualStyleBackColor = true;
             this.buttonAjout.Click += new System.EventHandler(this.buttonAjout_Click);
             // 

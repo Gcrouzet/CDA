@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listboxCombobox));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonFlecheBas = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@
             this.buttonEnlever = new System.Windows.Forms.Button();
             this.buttonToutEnlever = new System.Windows.Forms.Button();
             this.buttonFlecheHaut = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -139,6 +142,10 @@
             this.buttonFlecheHaut.UseVisualStyleBackColor = true;
             this.buttonFlecheHaut.Click += new System.EventHandler(this.buttonFlecheHaut_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // listboxCombobox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +166,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les listes";
             this.Load += new System.EventHandler(this.listboxCombobox_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +184,7 @@
         private System.Windows.Forms.Button buttonEnlever;
         private System.Windows.Forms.Button buttonToutEnlever;
         private System.Windows.Forms.Button buttonFlecheHaut;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{050AE68A-040C-4B6F-B30A-3061FA56EF37}</ProjectGuid>
+    <ProjectGuid>{AA95F593-E293-49B1-A4C6-839094FB42F5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsAppListBoxComboBox</RootNamespace>
-    <AssemblyName>WindowsFormsAppListBoxComboBox</AssemblyName>
+    <RootNamespace>WindowsFormsAppSynthese</RootNamespace>
+    <AssemblyName>WindowsFormsAppSynthese</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="listboxCombobox.cs">
+    <Compile Include="synthese.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listboxCombobox.Designer.cs">
-      <DependentUpon>listboxCombobox.cs</DependentUpon>
+    <Compile Include="synthese.Designer.cs">
+      <DependentUpon>synthese.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="listboxCombobox.resx">
-      <DependentUpon>listboxCombobox.cs</DependentUpon>
+    <EmbeddedResource Include="synthese.resx">
+      <DependentUpon>synthese.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryVerification\ClassLibraryVerification.csproj">
-      <Project>{4367a8b4-8bc7-43b4-9cb8-799ff3c95e70}</Project>
-      <Name>ClassLibraryVerification</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

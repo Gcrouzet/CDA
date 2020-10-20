@@ -65,23 +65,32 @@ namespace WindowsFormsAppListBox
                 if (chiffre > listBoxLstListe.Items.Count)
                 {
                     errorProviderIndex.SetError(textBoxIndex, "Il n'y a pas autant d'élément dans le tableau");
+                    textBoxIndex.Clear();
+                }
+                else if (chiffre <= 0)
+                {
+                    errorProviderIndex.SetError(textBoxIndex, "Choissisez un chiffre entre 1 et 9");
+                    textBoxIndex.Clear();
                 }
                 else
                 {
                     errorProviderIndex.Clear();
                     listBoxLstListe.SetSelected(chiffre - 1, true);
                     textBoxSelectedIndex.Text = Convert.ToString(chiffre);
-                    textBoxText.Text = listBoxLstListe.SelectedItem.ToString(); ;
+                    textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
                 }
+            }
+            else
+            {
+                errorProviderIndex.SetError(textBoxIndex, "Choissisez un chiffre entre 1 et 9");
+                textBoxIndex.Clear();
             }
         }
 
         private void listBoxLstListe_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             textBoxSelectedIndex.Text = Convert.ToString(listBoxLstListe.SelectedIndex + 1);
-            textBoxText.Text = listBoxLstListe.SelectedItem.ToString(); 
-
+            textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
         }
     }
 }

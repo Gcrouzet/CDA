@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace WindowsFormsCheckBox
 {
     public partial class checkBox : Form
     {
+
         public checkBox()
         {
             InitializeComponent();
@@ -21,6 +23,22 @@ namespace WindowsFormsCheckBox
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
+            labelDouble.Text = textBox.Text;
+
+            if (radioButtonMajuscules.Checked)
+            {
+                labelDouble.Text = textBox.Text.ToUpper();
+            }
+            else if (radioButtonMinuscules.Checked)
+            {
+                labelDouble.Text = textBox.Text.ToLower();
+            }
+            else
+            {
+                labelDouble.Text = textBox.Text;
+            }
+
+
             if (textBox.Text.Length > 0)
             {
                 groupBoxChoix.Enabled = true;
@@ -29,7 +47,7 @@ namespace WindowsFormsCheckBox
             {
                 groupBoxChoix.Enabled = false;
             }
-            labelDouble.Text = textBox.Text;
+
         }
 
         private void checkBoxCouleurDeFond_CheckedChanged(object sender, EventArgs e)
@@ -41,6 +59,9 @@ namespace WindowsFormsCheckBox
             else
             {
                 groupBoxFond.Visible = false;
+                radioButtonVert.Checked = false;
+                radioButtonRouge.Checked = false;
+                radioButtonBleu.Checked = false;
             }
         }
 
@@ -53,6 +74,9 @@ namespace WindowsFormsCheckBox
             else
             {
                 groupBoxCaracteres.Visible = false;
+                radioButtonNoir.Checked = false;
+                radioButtonBlanc.Checked = false;
+                radioButtonRougeCaractere.Checked = false;
             }
         }
 
@@ -65,6 +89,9 @@ namespace WindowsFormsCheckBox
             else
             {
                 groupBoxCasse.Visible = false;
+                radioButtonMinuscules.Checked = false;
+                radioButtonMajuscules.Checked = false;
+
             }
         }
 
@@ -74,6 +101,10 @@ namespace WindowsFormsCheckBox
             {
                 labelDouble.BackColor = System.Drawing.Color.Red;
             }
+            else
+            {
+                labelDouble.BackColor = SystemColors.Control;
+            }
 
         }
         private void radioButtonVert_CheckedChanged(object sender, EventArgs e)
@@ -82,7 +113,10 @@ namespace WindowsFormsCheckBox
             {
                 labelDouble.BackColor = System.Drawing.Color.Green;
             }
-
+            else
+            {
+                labelDouble.BackColor = SystemColors.Control;
+            }
         }
 
         private void radioButtonBleu_CheckedChanged(object sender, EventArgs e)
@@ -91,7 +125,10 @@ namespace WindowsFormsCheckBox
             {
                 labelDouble.BackColor = System.Drawing.Color.Blue;
             }
-
+            else
+            {
+                labelDouble.BackColor = SystemColors.Control;
+            }
         }
 
         private void radioButtonRougeCaractere_CheckedChanged(object sender, EventArgs e)
@@ -100,7 +137,10 @@ namespace WindowsFormsCheckBox
             {
                 labelDouble.ForeColor = System.Drawing.Color.Red;
             }
-
+            else
+            {
+                labelDouble.ForeColor = SystemColors.ControlText;
+            }
         }
 
         private void radioButtonBlanc_CheckedChanged(object sender, EventArgs e)
@@ -109,7 +149,10 @@ namespace WindowsFormsCheckBox
             {
                 labelDouble.ForeColor = System.Drawing.Color.White;
             }
-
+            else
+            {
+                labelDouble.ForeColor = SystemColors.ControlText;
+            }
         }
 
         private void radioButtonNoir_CheckedChanged(object sender, EventArgs e)
@@ -118,7 +161,10 @@ namespace WindowsFormsCheckBox
             {
                 labelDouble.ForeColor = System.Drawing.Color.Black;
             }
-
+            else
+            {
+                labelDouble.ForeColor = SystemColors.ControlText;
+            }
         }
 
         private void radioButtonMinuscules_CheckedChanged(object sender, EventArgs e)
@@ -128,6 +174,10 @@ namespace WindowsFormsCheckBox
 
                 labelDouble.Text = labelDouble.Text.ToLower();
             }
+            else
+            {
+                labelDouble.Text = textBox.Text;
+            }
         }
 
         private void radioButtonMajuscules_CheckedChanged(object sender, EventArgs e)
@@ -135,6 +185,10 @@ namespace WindowsFormsCheckBox
             if (radioButtonMajuscules.Checked == true)
             {
                 labelDouble.Text = labelDouble.Text.ToUpper();
+            }
+            else
+            {
+                labelDouble.Text = textBox.Text;
             }
         }
     }

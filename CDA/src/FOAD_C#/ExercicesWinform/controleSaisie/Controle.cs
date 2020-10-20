@@ -16,11 +16,18 @@ namespace controleSaisie
 {
     public partial class Controle : Form
     {
+        private Facture factureActuelle;
+
+        public Facture FactureActuelle
+        {
+            get => factureActuelle;
+        }
 
 
         public Controle()
         {
             InitializeComponent();
+            factureActuelle = new Facture();
         }
 
 
@@ -124,17 +131,16 @@ namespace controleSaisie
                 Verification.ErreurSaisie(textNom);
             }
 
+
             // Check tout est bon 
             if (nomIsOk & montantIsOk & dateIsOk & cpIsOk)
             {
                 MessageBox.Show(validOut, "Validation éffectuée");
                 DateTime date = DateTime.Parse(textdate);
                 float montant = float.Parse(textmontant);
-                Facture facture = new Facture(textnom, date, montant, textcp);
-                facture.ToString();
+                factureActuelle = new Facture(textnom, date, montant, textcp);
+                Facture result = this.FactureActuelle;
             }
-
-
         }
 
 
@@ -184,7 +190,7 @@ namespace controleSaisie
 
         private void textMontant_Leave(object sender, EventArgs e)
         {
-            bool montantIsOk = Verification.ValidDate(textMontant.Text);
+            bool montantIsOk = Verification.ValidMontant(textMontant.Text);
             if (montantIsOk == false)
             {
                 errorProvidertextbox.SetError(textMontant, "Ce n'est pas un" + textMontant.Tag.ToString());

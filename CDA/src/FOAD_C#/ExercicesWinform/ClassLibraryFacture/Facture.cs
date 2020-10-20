@@ -13,6 +13,14 @@ namespace ClassLibraryFacture
         private float montant;
         private string codePostal;
 
+        public Facture()
+        {
+            nom = "";
+            date = DateTime.Now;
+            montant = 0;
+            codePostal = "00000";
+        }
+
         public Facture(string nom, DateTime date, float montant, string codePostal)
         {
             this.nom = nom;

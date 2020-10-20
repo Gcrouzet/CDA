@@ -48,7 +48,7 @@
             // 
             // hScrollBarRouge
             // 
-            this.hScrollBarRouge.Location = new System.Drawing.Point(63, 66);
+            this.hScrollBarRouge.Location = new System.Drawing.Point(63, 65);
             this.hScrollBarRouge.Maximum = 264;
             this.hScrollBarRouge.Name = "hScrollBarRouge";
             this.hScrollBarRouge.Size = new System.Drawing.Size(207, 17);

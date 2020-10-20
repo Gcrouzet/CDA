@@ -15,7 +15,6 @@ namespace ClassLibraryVerification
         private const string regexNom = @"^[A-Za-z]+$";
         private const string regexCp = @"^(?:[0-8]\d|9[0-8])\d{3}$";
         private const string regexPrenom = @"^[a-z]+[ \-']?[[a-z]+[ \-']?]*[a-z]+$";
-        private const string regexChiffre = @"^[1-9]$";
 
 
 
@@ -45,27 +44,13 @@ namespace ClassLibraryVerification
         /// <returns></returns>
         public static bool ValidMontant(string _montant)
         {
-
-            if (float.TryParse(_montant, out float result))
-            {
-                if (result > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-
+            return float.TryParse(_montant, out float number) && number > 0;
         }
+
+
         public static bool ValidChiffre(string _chiffre)
         {
-            return Regex.IsMatch(_chiffre, regexChiffre);
+            return int.TryParse(_chiffre, out int result) && result <= 9;
         }
         /// <summary>
         ///  Valide le code postal

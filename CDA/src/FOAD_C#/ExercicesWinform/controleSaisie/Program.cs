@@ -18,7 +18,7 @@ namespace controleSaisie
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Controle());
-
+            Application.Run(new Controle(new Facture("gabriel", new DateTime(2022, 01, 01), 250, "06000")));
         }
     }
 }

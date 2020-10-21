@@ -28,5 +28,20 @@ namespace ClassLibraryFacture
             this.montant = montant;
             this.codePostal = codePostal;
         }
+
+        public string Nom { get => nom; }
+        //set => nom = value; 
+        public DateTime Date
+        {
+            get => date; //set => date = value; 
+        }
+        public float Montant
+        {
+            get => montant; //set => montant = value; 
+        }
+        public string CodePostal
+        {
+            get => codePostal; // set => codePostal = value;
+        }
     }
 }

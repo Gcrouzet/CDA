@@ -30,6 +30,17 @@ namespace controleSaisie
             factureActuelle = new Facture();
         }
 
+        public Controle(Facture factureActuelle)
+        {
+            InitializeComponent();
+            this.factureActuelle = factureActuelle;
+            textNom.Text = factureActuelle.Nom;
+            textDate.Text = factureActuelle.Date.ToString();
+            textCP.Text = factureActuelle.CodePostal;
+            textMontant.Text = factureActuelle.Montant.ToString();
+            Valider.Text = "Modifier";
+        }
+
 
 
         /// <summary>

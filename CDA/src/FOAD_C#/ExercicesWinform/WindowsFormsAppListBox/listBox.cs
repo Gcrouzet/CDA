@@ -30,6 +30,7 @@ namespace WindowsFormsAppListBox
             {
                 listBoxLstListe.Items.Add(textBoxAjout.Text);
                 errorProviderAjout.Clear();
+                textBoxAjout.Clear();
             }
             else if (pasDouble == true)
             {
@@ -39,8 +40,9 @@ namespace WindowsFormsAppListBox
             {
                 errorProviderAjout.SetError(textBoxAjout, "Veuillez entrer un prénom valide");
                 textBoxAjout.Focus();
+
             }
-            textBoxAjout.Clear();
+
             textBoxItemCount.Text = listBoxLstListe.Items.Count.ToString();
             buttonVider.Enabled = true;
 

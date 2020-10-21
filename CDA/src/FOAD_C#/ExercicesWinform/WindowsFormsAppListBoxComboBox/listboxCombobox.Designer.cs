@@ -125,6 +125,7 @@
             // 
             // buttonToutEnlever
             // 
+            this.buttonToutEnlever.Enabled = false;
             this.buttonToutEnlever.Location = new System.Drawing.Point(139, 197);
             this.buttonToutEnlever.Name = "buttonToutEnlever";
             this.buttonToutEnlever.Size = new System.Drawing.Size(75, 23);

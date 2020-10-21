@@ -42,6 +42,7 @@ namespace WindowsFormsAppListBoxComboBox
                     errorProvider1.Clear();
                     listBox1.Items.Add(comboBox1.Text);
                     comboBox1.Text = "";
+                    buttonToutEnlever.Enabled = true;
 
                 }
                 else if (pasDoublon == true)
@@ -60,8 +61,9 @@ namespace WindowsFormsAppListBoxComboBox
                 listBox1.Items.Add(comboBox1.SelectedItem);
                 comboBox1.Items.Remove(comboBox1.SelectedItem);
                 comboBox1.Text = "";
+                buttonToutEnlever.Enabled = true;
             }
-
+            buttonAjouter.Enabled = false;
         }
 
 
@@ -168,7 +170,7 @@ namespace WindowsFormsAppListBoxComboBox
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-
+            listBox1.ClearSelected();
             if (comboBox1.Text.Length == 0)
             {
                 buttonAjouter.Enabled = false;
@@ -179,6 +181,8 @@ namespace WindowsFormsAppListBoxComboBox
             }
             errorProvider1.Clear();
         }
+
+
     }
 
 }

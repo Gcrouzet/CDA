@@ -28,9 +28,6 @@ namespace WindowsFormsAppListBox
 
             if (prenomIsOk == true & pasDouble == false)
             {
-
-                buttonSelectionner.Enabled = true;
-
                 listBoxLstListe.Items.Add(textBoxAjout.Text);
                 errorProviderAjout.Clear();
             }
@@ -46,6 +43,7 @@ namespace WindowsFormsAppListBox
             textBoxAjout.Clear();
             textBoxItemCount.Text = listBoxLstListe.Items.Count.ToString();
             buttonVider.Enabled = true;
+
         }
 
         private void buttonVider_Click(object sender, EventArgs e)
@@ -57,6 +55,7 @@ namespace WindowsFormsAppListBox
             textBoxSelectedIndex.Clear();
             textBoxText.Clear();
             buttonVider.Enabled = false;
+            textBoxIndex.Clear();
         }
 
         private void buttonSelectionner_Click(object sender, EventArgs e)
@@ -98,14 +97,6 @@ namespace WindowsFormsAppListBox
         {
             textBoxSelectedIndex.Text = Convert.ToString(listBoxLstListe.SelectedIndex + 1);
             textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
-            if (listBoxLstListe.Items.Count == 0)
-            {
-                buttonSelectionner.Enabled = false;
-            }
-            else
-            {
-                buttonSelectionner.Enabled = true;
-            }
 
         }
 
@@ -128,6 +119,18 @@ namespace WindowsFormsAppListBox
             else
             {
                 buttonAjout.Enabled = false;
+            }
+        }
+
+        private void textBoxIndex_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxIndex.TextLength == 0 || listBoxLstListe.Items.Count == 0)
+            {
+                buttonSelectionner.Enabled = false;
+            }
+            else
+            {
+                buttonSelectionner.Enabled = true;
             }
         }
     }

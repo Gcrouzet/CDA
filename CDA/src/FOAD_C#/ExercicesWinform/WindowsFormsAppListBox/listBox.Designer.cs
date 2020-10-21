@@ -127,6 +127,7 @@
             this.textBoxIndex.Size = new System.Drawing.Size(34, 20);
             this.textBoxIndex.TabIndex = 7;
             this.textBoxIndex.Click += new System.EventHandler(this.textBoxIndex_Click);
+            this.textBoxIndex.TextChanged += new System.EventHandler(this.textBoxIndex_TextChanged);
             // 
             // buttonSelectionner
             // 
@@ -235,6 +236,7 @@
             this.Controls.Add(this.labelNouvelElément);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ListBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les listes et leurs propriétés";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderIndex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAjout)).EndInit();

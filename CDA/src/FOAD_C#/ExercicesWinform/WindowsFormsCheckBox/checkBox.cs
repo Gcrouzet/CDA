@@ -43,6 +43,13 @@ namespace WindowsFormsCheckBox
             {
                 groupBoxChoix.Enabled = true;
             }
+            else if (textBox.Text.Length == 0)
+            {
+                checkBoxCasse.Checked = false;
+                checkBoxCouleurDeFond.Checked = false;
+                checkBoxCouleurDesCaracteres.Checked = false;
+                groupBoxChoix.Enabled = false;
+            }
             else
             {
                 groupBoxChoix.Enabled = false;

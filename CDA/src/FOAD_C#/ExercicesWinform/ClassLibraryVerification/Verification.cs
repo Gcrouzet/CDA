@@ -14,7 +14,7 @@ namespace ClassLibraryVerification
         // regex en constante de nom et code postal
         private const string regexNom = @"^[A-Za-z]+$";
         private const string regexCp = @"^(?:[0-8]\d|9[0-8])\d{3}$";
-        private const string regexPrenom = @"^[a-z]+[ \-']?[[a-z]+[ \-']?]*[a-z]+$";
+        private const string regexPrenom = @"^[a-z]+[ \-']?[a-z]+$";
 
 
 
@@ -48,9 +48,9 @@ namespace ClassLibraryVerification
         }
 
 
-        public static bool ValidChiffre(string _chiffre)
+        public static bool ValidNombre(string _nombre)
         {
-            return int.TryParse(_chiffre, out int result) && result <= 9;
+            return int.TryParse(_nombre, out int result);
         }
         /// <summary>
         ///  Valide le code postal

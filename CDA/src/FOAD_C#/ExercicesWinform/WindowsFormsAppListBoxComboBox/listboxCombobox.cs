@@ -36,15 +36,22 @@ namespace WindowsFormsAppListBoxComboBox
             if (comboBox1.SelectedIndex == -1)
             {
                 bool paysIsOk = Verification.ValidNom(comboBox1.Text);
-                if (paysIsOk == true)
+                bool pasDoublon = listBox1.Items.Contains(comboBox1.Text);
+                if (paysIsOk == true & pasDoublon == false)
                 {
                     errorProvider1.Clear();
                     listBox1.Items.Add(comboBox1.Text);
                     comboBox1.Text = "";
+
+                }
+                else if (pasDoublon == true)
+                {
+                    errorProvider1.SetError(comboBox1, "doublon");
+                    comboBox1.Text = "";
                 }
                 else
                 {
-                    errorProvider1.SetError(comboBox1, "inserez le nom d un pays");
+                    errorProvider1.SetError(comboBox1, "inserez le nom d'un pays");
                 }
             }
             else
@@ -52,6 +59,7 @@ namespace WindowsFormsAppListBoxComboBox
 
                 listBox1.Items.Add(comboBox1.SelectedItem);
                 comboBox1.Items.Remove(comboBox1.SelectedItem);
+                comboBox1.Text = "";
             }
 
         }
@@ -66,6 +74,7 @@ namespace WindowsFormsAppListBoxComboBox
             comboBox1.Items.Clear();
             buttonToutAjouter.Enabled = false;
             buttonToutEnlever.Enabled = true;
+            comboBox1.Text = "";
         }
 
         private void buttonEnlever_Click(object sender, EventArgs e)
@@ -94,6 +103,7 @@ namespace WindowsFormsAppListBoxComboBox
             var item = lb.Items[index];
             lb.Items.RemoveAt(index);
             lb.Items.Insert(index + 1, item);
+            lb.SetSelected(index + 1, true);
         }
 
         private void buttonFlecheBas_Click(object sender, EventArgs e)
@@ -106,11 +116,14 @@ namespace WindowsFormsAppListBoxComboBox
             var item = lb.Items[index];
             lb.Items.RemoveAt(index);
             lb.Items.Insert(index - 1, item);
+            lb.SetSelected(index - 1, true);
         }
 
         private void buttonFlecheHaut_Click(object sender, EventArgs e)
         {
             MoveToTop(listBox1, listBox1.SelectedIndex);
+
+
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
@@ -152,5 +165,20 @@ namespace WindowsFormsAppListBoxComboBox
                 buttonFlecheBas.Enabled = false;
             }
         }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+
+            if (comboBox1.Text.Length == 0)
+            {
+                buttonAjouter.Enabled = false;
+            }
+            else
+            {
+                buttonAjouter.Enabled = true;
+            }
+            errorProvider1.Clear();
+        }
     }
+
 }

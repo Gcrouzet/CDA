@@ -28,8 +28,15 @@ namespace WindowsFormsAppListBox
 
             if (prenomIsOk == true & pasDouble == false)
             {
+
+                buttonSelectionner.Enabled = true;
+
                 listBoxLstListe.Items.Add(textBoxAjout.Text);
                 errorProviderAjout.Clear();
+            }
+            else if (pasDouble == true)
+            {
+                errorProviderAjout.SetError(textBoxAjout, "Doublon");
             }
             else
             {
@@ -37,52 +44,52 @@ namespace WindowsFormsAppListBox
                 textBoxAjout.Focus();
             }
             textBoxAjout.Clear();
-            // calcul du nombre d'item dans la listbox
-            int nbItem = listBoxLstListe.Items.Count;
-            string nbItemConvert = Convert.ToString(nbItem);
-            textBoxItemCount.Text = nbItemConvert;
+            textBoxItemCount.Text = listBoxLstListe.Items.Count.ToString();
+            buttonVider.Enabled = true;
         }
 
         private void buttonVider_Click(object sender, EventArgs e)
         {
             //clear de la listBox
+            buttonSelectionner.Enabled = false;
             listBoxLstListe.Items.Clear();
             textBoxItemCount.Clear();
             textBoxSelectedIndex.Clear();
             textBoxText.Clear();
+            buttonVider.Enabled = false;
         }
 
         private void buttonSelectionner_Click(object sender, EventArgs e)
         {
 
             // verification du chiffre à selectionner
-            bool chiffreIsOk = Verification.ValidChiffre(textBoxIndex.Text);
-            if (chiffreIsOk == true)
+            bool nombreIsOk = Verification.ValidNombre(textBoxIndex.Text);
+            if (nombreIsOk == true)
             {
 
-                int chiffre = int.Parse(textBoxIndex.Text);
+                int nombre = int.Parse(textBoxIndex.Text);
                 // verif chiffre ne depasse pas le nombre d'item dans la listbox
-                if (chiffre > listBoxLstListe.Items.Count)
+                if (nombre > listBoxLstListe.Items.Count)
                 {
                     errorProviderIndex.SetError(textBoxIndex, "Il n'y a pas autant d'élément dans le tableau");
                     textBoxIndex.Clear();
                 }
-                else if (chiffre <= 0)
+                else if (nombre <= 0)
                 {
-                    errorProviderIndex.SetError(textBoxIndex, "Choissisez un chiffre entre 1 et 9");
+                    errorProviderIndex.SetError(textBoxIndex, "Choissisez un nombre");
                     textBoxIndex.Clear();
                 }
                 else
                 {
                     errorProviderIndex.Clear();
-                    listBoxLstListe.SetSelected(chiffre - 1, true);
-                    textBoxSelectedIndex.Text = Convert.ToString(chiffre);
+                    listBoxLstListe.SetSelected(nombre - 1, true);
+                    textBoxSelectedIndex.Text = Convert.ToString(nombre);
                     textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
                 }
             }
             else
             {
-                errorProviderIndex.SetError(textBoxIndex, "Choissisez un chiffre entre 1 et 9");
+                errorProviderIndex.SetError(textBoxIndex, "Choissisez un nombre");
                 textBoxIndex.Clear();
             }
         }
@@ -91,6 +98,37 @@ namespace WindowsFormsAppListBox
         {
             textBoxSelectedIndex.Text = Convert.ToString(listBoxLstListe.SelectedIndex + 1);
             textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
+            if (listBoxLstListe.Items.Count == 0)
+            {
+                buttonSelectionner.Enabled = false;
+            }
+            else
+            {
+                buttonSelectionner.Enabled = true;
+            }
+
+        }
+
+        private void textBoxAjout_Click(object sender, EventArgs e)
+        {
+            errorProviderAjout.Clear();
+        }
+
+        private void textBoxIndex_Click(object sender, EventArgs e)
+        {
+            errorProviderIndex.Clear();
+        }
+
+        private void textBoxAjout_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxAjout.Text.Length > 0)
+            {
+                buttonAjout.Enabled = true;
+            }
+            else
+            {
+                buttonAjout.Enabled = false;
+            }
         }
     }
 }

@@ -93,6 +93,7 @@
             // 
             // buttonAjout
             // 
+            this.buttonAjout.Enabled = false;
             this.buttonAjout.Location = new System.Drawing.Point(16, 95);
             this.buttonAjout.Name = "buttonAjout";
             this.buttonAjout.Size = new System.Drawing.Size(100, 23);
@@ -107,6 +108,8 @@
             this.textBoxAjout.Name = "textBoxAjout";
             this.textBoxAjout.Size = new System.Drawing.Size(100, 20);
             this.textBoxAjout.TabIndex = 5;
+            this.textBoxAjout.Click += new System.EventHandler(this.textBoxAjout_Click);
+            this.textBoxAjout.TextChanged += new System.EventHandler(this.textBoxAjout_TextChanged);
             // 
             // listBoxLstListe
             // 
@@ -123,9 +126,11 @@
             this.textBoxIndex.Name = "textBoxIndex";
             this.textBoxIndex.Size = new System.Drawing.Size(34, 20);
             this.textBoxIndex.TabIndex = 7;
+            this.textBoxIndex.Click += new System.EventHandler(this.textBoxIndex_Click);
             // 
             // buttonSelectionner
             // 
+            this.buttonSelectionner.Enabled = false;
             this.buttonSelectionner.Location = new System.Drawing.Point(254, 57);
             this.buttonSelectionner.Name = "buttonSelectionner";
             this.buttonSelectionner.Size = new System.Drawing.Size(75, 23);
@@ -136,6 +141,7 @@
             // 
             // buttonVider
             // 
+            this.buttonVider.Enabled = false;
             this.buttonVider.Location = new System.Drawing.Point(254, 86);
             this.buttonVider.Name = "buttonVider";
             this.buttonVider.Size = new System.Drawing.Size(75, 23);

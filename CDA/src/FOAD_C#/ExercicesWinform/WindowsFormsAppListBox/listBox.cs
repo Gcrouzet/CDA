@@ -77,7 +77,7 @@ namespace WindowsFormsAppListBox
                 }
                 else if (nombre <= 0)
                 {
-                    errorProviderIndex.SetError(textBoxIndex, "Choissisez un nombre");
+                    errorProviderIndex.SetError(textBoxIndex, "Choissisez un chiffre/nombre");
                     textBoxIndex.Clear();
                 }
                 else
@@ -90,7 +90,7 @@ namespace WindowsFormsAppListBox
             }
             else
             {
-                errorProviderIndex.SetError(textBoxIndex, "Choissisez un nombre");
+                errorProviderIndex.SetError(textBoxIndex, "Choissisez un chiffre/nombre");
                 textBoxIndex.Clear();
             }
         }
@@ -126,9 +126,14 @@ namespace WindowsFormsAppListBox
 
         private void textBoxIndex_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxIndex.TextLength == 0 || listBoxLstListe.Items.Count == 0)
+            if (textBoxIndex.TextLength == 0)
             {
                 buttonSelectionner.Enabled = false;
+            }
+            else if (listBoxLstListe.Items.Count == 0)
+            {
+                buttonSelectionner.Enabled = true;
+
             }
             else
             {

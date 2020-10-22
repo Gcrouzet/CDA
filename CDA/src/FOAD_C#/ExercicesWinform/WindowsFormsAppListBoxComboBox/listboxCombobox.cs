@@ -57,8 +57,7 @@ namespace WindowsFormsAppListBoxComboBox
             }
             else
             {
-
-                listBox1.Items.Add(comboBox1.SelectedItem);
+                comboBox1.Items.Add(comboBox1.SelectedItem);
                 comboBox1.Items.Remove(comboBox1.SelectedItem);
                 comboBox1.Text = "";
                 buttonToutEnlever.Enabled = true;
@@ -77,14 +76,31 @@ namespace WindowsFormsAppListBoxComboBox
             buttonToutAjouter.Enabled = false;
             buttonToutEnlever.Enabled = true;
             comboBox1.Text = "";
+
+
         }
 
         private void buttonEnlever_Click(object sender, EventArgs e)
         {
+            int tempIndex = listBox1.SelectedIndex;
 
             comboBox1.Items.Add(listBox1.SelectedItem);
             listBox1.Items.Remove(listBox1.SelectedItem);
             buttonToutAjouter.Enabled = true;
+            if (tempIndex < listBox1.Items.Count)
+            {
+                listBox1.SetSelected(tempIndex, true);
+            }
+            else if (tempIndex == listBox1.Items.Count && tempIndex > 0)
+            {
+                listBox1.SetSelected(tempIndex - 1, true);
+            }
+            else
+            {
+                buttonToutEnlever.Enabled = false;
+                listBox1.ClearSelected();
+
+            }
         }
 
         private void buttonToutEnlever_Click(object sender, EventArgs e)

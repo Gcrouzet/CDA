@@ -15,7 +15,9 @@ namespace ClassLibraryVerification
         private const string regexNom = @"^[A-Za-z]+$";
         private const string regexCp = @"^(?:[0-8]\d|9[0-8])\d{3}$";
         private const string regexPrenom = @"^[a-z]+[ \-']?[a-z]+$";
+        private const string regexNombre = @"^[1-9]*[0-9]*$"
 
+;
 
 
         /// <summary>
@@ -47,10 +49,14 @@ namespace ClassLibraryVerification
             return float.TryParse(_montant, out float number) && number > 0;
         }
 
-
+        /// <summary>
+        /// Valide un nombre
+        /// </summary>
+        /// <param name="_nombre"></param>
+        /// <returns></returns>
         public static bool ValidNombre(string _nombre)
         {
-            return int.TryParse(_nombre, out int result);
+            return int.TryParse(_nombre, out int result) && Regex.IsMatch(_nombre, regexNombre);
         }
         /// <summary>
         ///  Valide le code postal

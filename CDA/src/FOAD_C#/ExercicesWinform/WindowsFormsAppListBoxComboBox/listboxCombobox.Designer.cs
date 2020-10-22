@@ -55,12 +55,14 @@
             // 
             // buttonFlecheBas
             // 
+            this.buttonFlecheBas.BackColor = System.Drawing.SystemColors.Control;
             this.buttonFlecheBas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFlecheBas.BackgroundImage")));
-            this.buttonFlecheBas.Location = new System.Drawing.Point(257, 235);
+            this.buttonFlecheBas.Enabled = false;
+            this.buttonFlecheBas.Location = new System.Drawing.Point(259, 235);
             this.buttonFlecheBas.Name = "buttonFlecheBas";
-            this.buttonFlecheBas.Size = new System.Drawing.Size(30, 31);
+            this.buttonFlecheBas.Size = new System.Drawing.Size(28, 31);
             this.buttonFlecheBas.TabIndex = 1;
-            this.buttonFlecheBas.UseVisualStyleBackColor = true;
+            this.buttonFlecheBas.UseVisualStyleBackColor = false;
             this.buttonFlecheBas.Click += new System.EventHandler(this.buttonFlecheBas_Click);
             // 
             // comboBox1
@@ -137,6 +139,7 @@
             // buttonFlecheHaut
             // 
             this.buttonFlecheHaut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFlecheHaut.BackgroundImage")));
+            this.buttonFlecheHaut.Enabled = false;
             this.buttonFlecheHaut.Location = new System.Drawing.Point(293, 235);
             this.buttonFlecheHaut.Name = "buttonFlecheHaut";
             this.buttonFlecheHaut.Size = new System.Drawing.Size(30, 31);

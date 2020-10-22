@@ -58,6 +58,7 @@ namespace WindowsFormsAppListBox
             textBoxText.Clear();
             buttonVider.Enabled = false;
             textBoxIndex.Clear();
+            errorProviderIndex.Clear();
         }
 
         private void buttonSelectionner_Click(object sender, EventArgs e)

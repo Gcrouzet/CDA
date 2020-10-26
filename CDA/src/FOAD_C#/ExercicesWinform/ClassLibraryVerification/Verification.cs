@@ -12,7 +12,7 @@ namespace ClassLibraryVerification
     public static class Verification
     {
         // regex en constante de nom et code postal
-        private const string regexNom = @"^[A-Za-z]+$";
+        private const string regexNom = @"^[A-Z][a-z]*$";
         private const string regexCp = @"^(?:[0-8]\d|9[0-8])\d{3}$";
         private const string regexPrenom = @"^[a-z]+[ \-']?[a-z]+$";
         private const string regexNombre = @"^[1-9]*[0-9]*$"

@@ -12,9 +12,24 @@ namespace WindowsFormsAppDefilement
 {
     public partial class defilement : Form
     {
+        private Color couleurFinale;
         public defilement()
         {
             InitializeComponent();
+            couleurFinale = new Color();
+            couleurFinale = Color.FromArgb(0, 0, 0);
+        }
+        /// <summary>
+        /// Update la couleur du textBoxEtiquette
+        /// </summary>
+        private void UpdateCouleurFinale()
+        {
+            int rouge = Convert.ToInt32(numericUpDownRouge.Value);
+            int vert = Convert.ToInt32(numericUpDownVert.Value);
+            int bleu = Convert.ToInt32(numericUpDownBleu.Value);
+
+            couleurFinale = Color.FromArgb(rouge, vert, bleu);
+            textBoxEtiquette.BackColor = couleurFinale;
         }
         /// <summary>
         /// Chargement des couleurs dans les textboxs
@@ -26,8 +41,7 @@ namespace WindowsFormsAppDefilement
             textBoxBleu.BackColor = System.Drawing.Color.Blue;
             textBoxRouge.BackColor = System.Drawing.Color.Red;
             textBoxVert.BackColor = System.Drawing.Color.Green;
-            textBoxEtiquette.BackColor = Color.FromArgb((int)numericUpDownRouge.Value, (int)numericUpDownVert.Value, (int)numericUpDownBleu.Value);
-
+            textBoxEtiquette.BackColor = couleurFinale;
         }
         /// <summary>
         /// associe la scrollbar rouge au numerique rouge et change la couleur de l'etiquette
@@ -36,8 +50,8 @@ namespace WindowsFormsAppDefilement
         /// <param name="e"></param>
         private void numericUpDownRouge_ValueChanged(object sender, EventArgs e)
         {
-            textBoxEtiquette.BackColor = Color.FromArgb((int)numericUpDownRouge.Value, (int)numericUpDownVert.Value, (int)numericUpDownBleu.Value);
             hScrollBarRouge.Value = (int)numericUpDownRouge.Value;
+            UpdateCouleurFinale();
         }
         /// <summary>
         /// associe la scrollbar vert au numerique vert et change la couleur de l'etiquette
@@ -46,8 +60,8 @@ namespace WindowsFormsAppDefilement
         /// <param name="e"></param>
         private void numericUpDownVert_ValueChanged(object sender, EventArgs e)
         {
-            textBoxEtiquette.BackColor = Color.FromArgb((int)numericUpDownRouge.Value, (int)numericUpDownVert.Value, (int)numericUpDownBleu.Value);
             hScrollBarVert.Value = (int)numericUpDownVert.Value;
+            UpdateCouleurFinale();
         }
 
         /// <summary>
@@ -57,8 +71,8 @@ namespace WindowsFormsAppDefilement
         /// <param name="e"></param>
         private void numericUpDownBleu_ValueChanged(object sender, EventArgs e)
         {
-            textBoxEtiquette.BackColor = Color.FromArgb((int)numericUpDownRouge.Value, (int)numericUpDownVert.Value, (int)numericUpDownBleu.Value);
             hScrollBarBleu.Value = (int)numericUpDownBleu.Value;
+            UpdateCouleurFinale();
         }
         /// <summary>
         /// associe la scrollbar rouge au numerique rouge

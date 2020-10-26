@@ -36,8 +36,10 @@ namespace WindowsFormsAppListBoxComboBox
             if (comboBox1.SelectedIndex == -1)
             {
                 bool paysIsOk = Verification.ValidNom(comboBox1.Text);
-                bool pasDoublon = listBox1.Items.Contains(comboBox1.Text);
-                if (paysIsOk == true & pasDoublon == false)
+                int pasDoublon = listBox1.FindStringExact(comboBox1.Text);
+                int pasDoublonCombo = comboBox1.FindStringExact(comboBox1.Text);
+
+                if (paysIsOk == true & pasDoublon == -1 & pasDoublonCombo == -1)
                 {
                     errorProvider1.Clear();
                     listBox1.Items.Add(comboBox1.Text);
@@ -45,19 +47,26 @@ namespace WindowsFormsAppListBoxComboBox
                     buttonToutEnlever.Enabled = true;
 
                 }
-                else if (pasDoublon == true)
+                else if (paysIsOk == true & pasDoublon >= 0)
                 {
                     errorProvider1.SetError(comboBox1, "doublon");
                     comboBox1.Text = "";
                 }
+                else if (paysIsOk == true & pasDoublonCombo >= 0)
+                {
+                    comboBox1.Items.Remove(comboBox1.Text);
+                    listBox1.Items.Add(comboBox1.Text);
+                    comboBox1.Text = "";
+                    buttonToutEnlever.Enabled = true;
+                }
                 else
                 {
-                    errorProvider1.SetError(comboBox1, "inserez le nom d'un pays");
+                    errorProvider1.SetError(comboBox1, "inserez le nom d'un pays commençant par une majuscule");
                 }
             }
             else
             {
-                comboBox1.Items.Add(comboBox1.SelectedItem);
+                listBox1.Items.Add(comboBox1.SelectedItem);
                 comboBox1.Items.Remove(comboBox1.SelectedItem);
                 comboBox1.Text = "";
                 buttonToutEnlever.Enabled = true;

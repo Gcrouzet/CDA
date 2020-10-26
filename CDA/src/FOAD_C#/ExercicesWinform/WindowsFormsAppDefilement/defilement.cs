@@ -24,11 +24,6 @@ namespace WindowsFormsAppDefilement
         /// </summary>
         private void UpdateCouleurFinale()
         {
-            int rouge = Convert.ToInt32(numericUpDownRouge.Value);
-            int vert = Convert.ToInt32(numericUpDownVert.Value);
-            int bleu = Convert.ToInt32(numericUpDownBleu.Value);
-
-            couleurFinale = Color.FromArgb(rouge, vert, bleu);
             textBoxEtiquette.BackColor = couleurFinale;
         }
         /// <summary>
@@ -50,7 +45,9 @@ namespace WindowsFormsAppDefilement
         /// <param name="e"></param>
         private void numericUpDownRouge_ValueChanged(object sender, EventArgs e)
         {
+
             hScrollBarRouge.Value = (int)numericUpDownRouge.Value;
+            couleurFinale = Color.FromArgb((int)numericUpDownRouge.Value, couleurFinale.G, couleurFinale.B);
             UpdateCouleurFinale();
         }
         /// <summary>
@@ -61,6 +58,7 @@ namespace WindowsFormsAppDefilement
         private void numericUpDownVert_ValueChanged(object sender, EventArgs e)
         {
             hScrollBarVert.Value = (int)numericUpDownVert.Value;
+            couleurFinale = Color.FromArgb(couleurFinale.R, (int)numericUpDownVert.Value, couleurFinale.B);
             UpdateCouleurFinale();
         }
 
@@ -72,6 +70,7 @@ namespace WindowsFormsAppDefilement
         private void numericUpDownBleu_ValueChanged(object sender, EventArgs e)
         {
             hScrollBarBleu.Value = (int)numericUpDownBleu.Value;
+            couleurFinale = Color.FromArgb(couleurFinale.R, couleurFinale.G, (int)numericUpDownBleu.Value);
             UpdateCouleurFinale();
         }
         /// <summary>

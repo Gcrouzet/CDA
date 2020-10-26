@@ -50,7 +50,7 @@ namespace WindowsFormsAppListBoxComboBox
                 else if (paysIsOk == true & pasDoublon >= 0)
                 {
                     errorProvider1.SetError(comboBox1, "doublon");
-                    comboBox1.Text = "";
+
                 }
                 else if (paysIsOk == true & pasDoublonCombo >= 0)
                 {
@@ -72,6 +72,9 @@ namespace WindowsFormsAppListBoxComboBox
                 buttonToutEnlever.Enabled = true;
             }
             buttonAjouter.Enabled = false;
+            buttonAjouter.Focus();
+
+
         }
 
 
@@ -85,8 +88,8 @@ namespace WindowsFormsAppListBoxComboBox
             buttonToutAjouter.Enabled = false;
             buttonToutEnlever.Enabled = true;
             comboBox1.Text = "";
-
-
+            errorProvider1.Clear();
+            comboBox1.ResetText();
         }
 
         private void buttonEnlever_Click(object sender, EventArgs e)
@@ -110,6 +113,9 @@ namespace WindowsFormsAppListBoxComboBox
                 listBox1.ClearSelected();
 
             }
+            buttonEnlever.Focus();
+            errorProvider1.Clear();
+            comboBox1.ResetText();
         }
 
         private void buttonToutEnlever_Click(object sender, EventArgs e)
@@ -124,6 +130,8 @@ namespace WindowsFormsAppListBoxComboBox
             buttonEnlever.Enabled = false;
             buttonFlecheBas.Enabled = false;
             buttonFlecheHaut.Enabled = false;
+            errorProvider1.Clear();
+            comboBox1.ResetText();
         }
         public void MoveToBot(ListBox lb, int index)
         {
@@ -136,6 +144,8 @@ namespace WindowsFormsAppListBoxComboBox
         private void buttonFlecheBas_Click(object sender, EventArgs e)
         {
             MoveToBot(listBox1, listBox1.SelectedIndex);
+            errorProvider1.Clear();
+            comboBox1.ResetText();
         }
 
         public void MoveToTop(ListBox lb, int index)
@@ -149,8 +159,8 @@ namespace WindowsFormsAppListBoxComboBox
         private void buttonFlecheHaut_Click(object sender, EventArgs e)
         {
             MoveToTop(listBox1, listBox1.SelectedIndex);
-
-
+            errorProvider1.Clear();
+            comboBox1.ResetText();
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)

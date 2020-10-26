@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelNom = new System.Windows.Forms.Label();
             this.labelCapitalEmprunté = new System.Windows.Forms.Label();
             this.labelDuree = new System.Windows.Forms.Label();
@@ -36,18 +37,19 @@
             this.labelNbDeRemboursement = new System.Windows.Forms.Label();
             this.labelRemboursement = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
-            this.buttonAnnuler = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.labelDuree2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.textBoxCapitalEmprunte = new System.Windows.Forms.TextBox();
             this.labelNb = new System.Windows.Forms.Label();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNom
@@ -101,36 +103,29 @@
             this.labelNbDeRemboursement.AutoSize = true;
             this.labelNbDeRemboursement.Location = new System.Drawing.Point(341, 172);
             this.labelNbDeRemboursement.Name = "labelNbDeRemboursement";
-            this.labelNbDeRemboursement.Size = new System.Drawing.Size(19, 13);
+            this.labelNbDeRemboursement.Size = new System.Drawing.Size(13, 13);
             this.labelNbDeRemboursement.TabIndex = 5;
-            this.labelNbDeRemboursement.Text = "10";
+            this.labelNbDeRemboursement.Text = "1";
+            this.labelNbDeRemboursement.TextChanged += new System.EventHandler(this.labelNbDeRemboursement_TextChanged);
             // 
             // labelRemboursement
             // 
             this.labelRemboursement.AutoSize = true;
             this.labelRemboursement.Location = new System.Drawing.Point(452, 227);
             this.labelRemboursement.Name = "labelRemboursement";
-            this.labelRemboursement.Size = new System.Drawing.Size(34, 13);
+            this.labelRemboursement.Size = new System.Drawing.Size(0, 13);
             this.labelRemboursement.TabIndex = 6;
-            this.labelRemboursement.Text = "250 €";
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(540, 23);
+            this.buttonOk.Enabled = false;
+            this.buttonOk.Location = new System.Drawing.Point(520, 58);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonOk.Size = new System.Drawing.Size(81, 23);
             this.buttonOk.TabIndex = 7;
-            this.buttonOk.Text = "OK";
+            this.buttonOk.Text = "Sauvegarder";
             this.buttonOk.UseVisualStyleBackColor = true;
-            // 
-            // buttonAnnuler
-            // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(540, 63);
-            this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.buttonAnnuler.TabIndex = 8;
-            this.buttonAnnuler.Text = "Annuler";
-            this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // groupBox1
             // 
@@ -144,16 +139,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taux d\'interet";
             // 
-            // radioButton7
+            // radioButton8
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(25, 28);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(42, 17);
-            this.radioButton7.TabIndex = 0;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "7 %";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(25, 63);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(42, 17);
+            this.radioButton8.TabIndex = 4;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Tag = "8";
+            this.radioButton8.Text = "8 %";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton9
             // 
@@ -163,19 +160,23 @@
             this.radioButton9.Size = new System.Drawing.Size(42, 17);
             this.radioButton9.TabIndex = 2;
             this.radioButton9.TabStop = true;
+            this.radioButton9.Tag = "9";
             this.radioButton9.Text = "9 %";
             this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
-            // radioButton8
+            // radioButton7
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(25, 63);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(42, 17);
-            this.radioButton8.TabIndex = 4;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "8 %";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(25, 28);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(42, 17);
+            this.radioButton7.TabIndex = 0;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Tag = "7";
+            this.radioButton7.Text = "7 %";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // labelDuree2
             // 
@@ -193,6 +194,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(249, 69);
             this.listBox1.TabIndex = 11;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // textBoxNom
             // 
@@ -207,22 +209,32 @@
             this.textBoxCapitalEmprunte.Name = "textBoxCapitalEmprunte";
             this.textBoxCapitalEmprunte.Size = new System.Drawing.Size(100, 20);
             this.textBoxCapitalEmprunte.TabIndex = 13;
+            this.textBoxCapitalEmprunte.TextChanged += new System.EventHandler(this.textBoxCapitalEmprunte_TextChanged);
             // 
             // labelNb
             // 
             this.labelNb.AutoSize = true;
             this.labelNb.Location = new System.Drawing.Point(138, 106);
             this.labelNb.Name = "labelNb";
-            this.labelNb.Size = new System.Drawing.Size(25, 13);
+            this.labelNb.Size = new System.Drawing.Size(13, 13);
             this.labelNb.TabIndex = 14;
-            this.labelNb.Text = "120";
+            this.labelNb.Text = "1";
+            this.labelNb.TextChanged += new System.EventHandler(this.labelNb_TextChanged);
             // 
             // hScrollBar1
             // 
             this.hScrollBar1.Location = new System.Drawing.Point(184, 106);
+            this.hScrollBar1.Maximum = 150;
+            this.hScrollBar1.Minimum = 1;
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(160, 17);
             this.hScrollBar1.TabIndex = 15;
+            this.hScrollBar1.Value = 1;
+            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // synthese
             // 
@@ -236,7 +248,6 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.labelDuree2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.labelRemboursement);
             this.Controls.Add(this.labelNbDeRemboursement);
@@ -247,10 +258,12 @@
             this.Controls.Add(this.labelNom);
             this.Name = "synthese";
             this.Text = "Emprunts";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.synthese_FormClosing);
             this.Load += new System.EventHandler(this.synthese_Load);
             this.Shown += new System.EventHandler(this.synthese_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +279,6 @@
         private System.Windows.Forms.Label labelNbDeRemboursement;
         private System.Windows.Forms.Label labelRemboursement;
         private System.Windows.Forms.Button buttonOk;
-        private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.RadioButton radioButton9;
@@ -277,6 +289,7 @@
         private System.Windows.Forms.TextBox textBoxCapitalEmprunte;
         private System.Windows.Forms.Label labelNb;
         private System.Windows.Forms.HScrollBar hScrollBar1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

@@ -16,7 +16,6 @@ namespace WindowsFormsAppDefilement
         public defilement()
         {
             InitializeComponent();
-            couleurFinale = new Color();
             couleurFinale = Color.FromArgb(0, 0, 0);
         }
         /// <summary>

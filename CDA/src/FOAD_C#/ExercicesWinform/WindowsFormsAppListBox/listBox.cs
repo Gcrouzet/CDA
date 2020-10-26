@@ -31,6 +31,7 @@ namespace WindowsFormsAppListBox
                 listBoxLstListe.Items.Add(textBoxAjout.Text);
                 errorProviderAjout.Clear();
                 textBoxAjout.Clear();
+                buttonVider.Enabled = true;
             }
             else if (pasDouble == true)
             {
@@ -44,7 +45,7 @@ namespace WindowsFormsAppListBox
             }
 
             textBoxItemCount.Text = listBoxLstListe.Items.Count.ToString();
-            buttonVider.Enabled = true;
+
 
         }
 
@@ -115,7 +116,8 @@ namespace WindowsFormsAppListBox
 
         private void textBoxAjout_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxAjout.Text.Length > 0)
+            errorProviderAjout.Clear();
+            if (textBoxAjout.Text.Length > 1)
             {
                 buttonAjout.Enabled = true;
             }

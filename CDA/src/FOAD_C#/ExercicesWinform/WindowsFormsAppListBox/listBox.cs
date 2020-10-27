@@ -22,6 +22,7 @@ namespace WindowsFormsAppListBox
 
         private void buttonAjout_Click(object sender, EventArgs e)
         {
+            textBoxIndex.Clear();
             // Verification du prenom 
             bool prenomIsOk = Verification.ValidPrenom(textBoxAjout.Text);
             bool pasDouble = listBoxLstListe.Items.Contains(textBoxAjout.Text);
@@ -107,6 +108,7 @@ namespace WindowsFormsAppListBox
         private void textBoxAjout_Click(object sender, EventArgs e)
         {
             errorProviderAjout.Clear();
+
         }
 
         private void textBoxIndex_Click(object sender, EventArgs e)
@@ -116,6 +118,7 @@ namespace WindowsFormsAppListBox
 
         private void textBoxAjout_TextChanged(object sender, EventArgs e)
         {
+            textBoxIndex.Clear();
             errorProviderAjout.Clear();
             if (textBoxAjout.Text.Length > 1)
             {
@@ -135,7 +138,7 @@ namespace WindowsFormsAppListBox
             }
             else if (listBoxLstListe.Items.Count == 0)
             {
-                buttonSelectionner.Enabled = true;
+                buttonSelectionner.Enabled = false;
 
             }
             else

@@ -100,8 +100,12 @@ namespace WindowsFormsAppListBox
 
         private void listBoxLstListe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxSelectedIndex.Text = Convert.ToString(listBoxLstListe.SelectedIndex + 1);
-            textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
+            if (listBoxLstListe.SelectedIndex != -1)
+            {
+                textBoxSelectedIndex.Text = Convert.ToString(listBoxLstListe.SelectedIndex + 1);
+                textBoxText.Text = listBoxLstListe.SelectedItem.ToString();
+            }
+
 
         }
 

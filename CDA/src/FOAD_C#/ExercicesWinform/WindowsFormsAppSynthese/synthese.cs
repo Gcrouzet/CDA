@@ -270,7 +270,7 @@ namespace WindowsFormsAppSynthese
         /// <param name="e"></param>
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            bool nomIsOk = Verification.ValidNom(textBoxNom.Text);
+            bool nomIsOk = Verification.ValidNom(Convert.ToString(textBoxNom.Text));
             bool capitalIsOk = Verification.ValidMontant(textBoxCapitalEmprunte.Text);
             if (nomIsOk & capitalIsOk)
             {
@@ -278,7 +278,7 @@ namespace WindowsFormsAppSynthese
             }
             else if (nomIsOk == false)
             {
-                errorProvider1.SetError(textBoxNom, "Rentrez un nom commençant par une majuscule");
+                errorProvider1.SetError(textBoxNom, "Rentrez un nom(alphabétique) commençant par une majuscule et sans espace");
             }
             else
             {
@@ -314,7 +314,7 @@ namespace WindowsFormsAppSynthese
 
             if (nomIsOk == false)
             {
-                errorProvider1.SetError(textBoxNom, "Entrez un nom commençant par une majuscule");
+                errorProvider1.SetError(textBoxNom, "Rentrez un nom(alphabétique) commençant par une majuscule et sans espace");
             }
             else
             {

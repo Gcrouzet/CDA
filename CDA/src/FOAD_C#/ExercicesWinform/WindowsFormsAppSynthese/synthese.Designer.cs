@@ -92,7 +92,7 @@
             // 
             this.labelRemboursements.AutoSize = true;
             this.labelRemboursements.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRemboursements.Location = new System.Drawing.Point(404, 167);
+            this.labelRemboursements.Location = new System.Drawing.Point(412, 167);
             this.labelRemboursements.Name = "labelRemboursements";
             this.labelRemboursements.Size = new System.Drawing.Size(150, 20);
             this.labelRemboursements.TabIndex = 4;
@@ -101,9 +101,10 @@
             // labelNbDeRemboursement
             // 
             this.labelNbDeRemboursement.AutoSize = true;
-            this.labelNbDeRemboursement.Location = new System.Drawing.Point(341, 172);
+            this.labelNbDeRemboursement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNbDeRemboursement.Location = new System.Drawing.Point(353, 166);
             this.labelNbDeRemboursement.Name = "labelNbDeRemboursement";
-            this.labelNbDeRemboursement.Size = new System.Drawing.Size(13, 13);
+            this.labelNbDeRemboursement.Size = new System.Drawing.Size(19, 20);
             this.labelNbDeRemboursement.TabIndex = 5;
             this.labelNbDeRemboursement.Text = "1";
             this.labelNbDeRemboursement.TextChanged += new System.EventHandler(this.labelNbDeRemboursement_TextChanged);
@@ -202,6 +203,7 @@
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(100, 20);
             this.textBoxNom.TabIndex = 12;
+            this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxCapitalEmprunte
             // 
@@ -231,6 +233,7 @@
             this.hScrollBar1.TabIndex = 15;
             this.hScrollBar1.Value = 1;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            this.hScrollBar1.ValueChanged += new System.EventHandler(this.hScrollBar1_ValueChanged);
             // 
             // errorProvider1
             // 

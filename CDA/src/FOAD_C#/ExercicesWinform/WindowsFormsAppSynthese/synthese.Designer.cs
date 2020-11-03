@@ -107,7 +107,7 @@
             this.labelNbDeRemboursement.Size = new System.Drawing.Size(19, 20);
             this.labelNbDeRemboursement.TabIndex = 5;
             this.labelNbDeRemboursement.Text = "1";
-            this.labelNbDeRemboursement.TextChanged += new System.EventHandler(this.labelNbDeRemboursement_TextChanged);
+
             // 
             // labelRemboursement
             // 
@@ -232,7 +232,6 @@
             this.hScrollBar1.Size = new System.Drawing.Size(160, 17);
             this.hScrollBar1.TabIndex = 15;
             this.hScrollBar1.Value = 1;
-            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             this.hScrollBar1.ValueChanged += new System.EventHandler(this.hScrollBar1_ValueChanged);
             // 
             // errorProvider1
@@ -262,8 +261,6 @@
             this.Name = "synthese";
             this.Text = "Emprunts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.synthese_FormClosing);
-            this.Load += new System.EventHandler(this.synthese_Load);
-            this.Shown += new System.EventHandler(this.synthese_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

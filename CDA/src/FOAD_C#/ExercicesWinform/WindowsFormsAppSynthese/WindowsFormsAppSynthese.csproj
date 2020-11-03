@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pret.cs" />
     <Compile Include="synthese.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +81,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryPret\ClassLibraryPret.csproj">
+      <Project>{da97fc71-7d89-4b02-a3f5-38ba96364fe4}</Project>
+      <Name>ClassLibraryPret</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibraryVerification\ClassLibraryVerification.csproj">
       <Project>{4367a8b4-8bc7-43b4-9cb8-799ff3c95e70}</Project>
       <Name>ClassLibraryVerification</Name>

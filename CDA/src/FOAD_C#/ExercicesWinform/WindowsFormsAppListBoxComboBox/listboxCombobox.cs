@@ -87,7 +87,6 @@ namespace WindowsFormsAppListBoxComboBox
             comboBox1.Items.Clear();
             buttonToutAjouter.Enabled = false;
             buttonToutEnlever.Enabled = true;
-            comboBox1.Text = "";
             errorProvider1.Clear();
             comboBox1.ResetText();
         }

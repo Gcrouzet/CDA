@@ -16,7 +16,7 @@ namespace WindowsFormsCheckBox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new checkBox());
+            Application.Run(new CheckBoxRadio());
         }
     }
 }

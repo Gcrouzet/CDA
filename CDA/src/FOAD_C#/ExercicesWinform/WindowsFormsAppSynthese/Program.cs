@@ -16,7 +16,7 @@ namespace WindowsFormsAppSynthese
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new synthese());
+            Application.Run(new Synthese());
         }
     }
 }

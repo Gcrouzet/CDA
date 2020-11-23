@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsAppListBoxComboBox
+namespace WindowsFormsAppMDI
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WindowsFormsAppListBoxComboBox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListboxCombobox());
+            Application.Run(new frmMenu());
         }
     }
 }

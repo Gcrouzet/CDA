@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsCheckBox
 {
-    public partial class checkBox : Form
+    public partial class CheckBoxRadio : Form
     {
 
-        public checkBox()
+        public CheckBoxRadio()
         {
             InitializeComponent();
         }

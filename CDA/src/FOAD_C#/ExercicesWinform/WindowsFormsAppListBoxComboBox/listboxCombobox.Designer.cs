@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppListBoxComboBox
 {
-    partial class listboxCombobox
+    partial class ListboxCombobox
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listboxCombobox));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListboxCombobox));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonFlecheBas = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();

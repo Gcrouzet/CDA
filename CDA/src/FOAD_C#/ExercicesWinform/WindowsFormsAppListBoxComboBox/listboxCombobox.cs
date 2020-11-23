@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppListBoxComboBox
 {
-    public partial class listboxCombobox : Form
+    public partial class ListboxCombobox : Form
     {
-        public listboxCombobox()
+        public ListboxCombobox()
         {
             InitializeComponent();
         }

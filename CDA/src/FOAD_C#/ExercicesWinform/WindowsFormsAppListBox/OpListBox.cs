@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppListBox
 {
-    public partial class ListBox : Form
+    public partial class OpListBox : Form
     {
-        public ListBox()
+        public OpListBox()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppListBox
 {
-    partial class ListBox
+    partial class OpListBox
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

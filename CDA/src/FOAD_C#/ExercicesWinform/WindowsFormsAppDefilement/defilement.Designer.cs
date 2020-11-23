@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppDefilement
 {
-    partial class defilement
+    partial class Defilement
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

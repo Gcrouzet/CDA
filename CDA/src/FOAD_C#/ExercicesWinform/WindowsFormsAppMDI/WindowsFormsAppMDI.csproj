@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC9D133A-B9A3-4D28-A035-192F13F4D25A}</ProjectGuid>
+    <ProjectGuid>{FA79C02B-35DA-4719-8D30-A8864AE3728B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsAppListBox</RootNamespace>
-    <AssemblyName>WindowsFormsAppListBox</AssemblyName>
+    <RootNamespace>WindowsFormsAppMDI</RootNamespace>
+    <AssemblyName>WindowsFormsAppMDI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OpListBox.cs">
+    <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpListBox.Designer.cs">
-      <DependentUpon>OpListBox.cs</DependentUpon>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="OpListBox.resx">
-      <DependentUpon>OpListBox.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,9 +80,33 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryVerification\ClassLibraryVerification.csproj">
-      <Project>{4367a8b4-8bc7-43b4-9cb8-799ff3c95e70}</Project>
-      <Name>ClassLibraryVerification</Name>
+    <ProjectReference Include="..\Calculatrice - Copie\Calculatrice2.csproj">
+      <Project>{b27262cf-3e2e-452e-aea0-3821dc567d95}</Project>
+      <Name>Calculatrice2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\controleSaisie\controleSaisie.csproj">
+      <Project>{cd26132d-879d-4b61-9b26-3ea69c1b0afb}</Project>
+      <Name>controleSaisie</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsAppDefilement\WindowsFormsAppDefilement.csproj">
+      <Project>{30f350f0-59f4-4960-ac8f-7748b273477d}</Project>
+      <Name>WindowsFormsAppDefilement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsAppListBoxComboBox\WindowsFormsAppListBoxComboBox.csproj">
+      <Project>{050ae68a-040c-4b6f-b30a-3061fa56ef37}</Project>
+      <Name>WindowsFormsAppListBoxComboBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsAppListBox\WindowsFormsAppListBox.csproj">
+      <Project>{ac9d133a-b9a3-4d28-a035-192f13f4d25a}</Project>
+      <Name>WindowsFormsAppListBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsAppSynthese\WindowsFormsAppSynthese.csproj">
+      <Project>{aa95f593-e293-49b1-a4c6-839094fb42f5}</Project>
+      <Name>WindowsFormsAppSynthese</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsCheckBox\WindowsFormsCheckBox.csproj">
+      <Project>{4d124bcb-3365-49a3-9f3d-cca270a50561}</Project>
+      <Name>WindowsFormsCheckBox</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

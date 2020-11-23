@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsCheckBox
 {
-    partial class checkBox
+    partial class CheckBoxRadio
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

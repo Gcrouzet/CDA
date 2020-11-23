@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppSynthese
 {
-    public partial class synthese : Form
+    public partial class Synthese : Form
     {
         private Pret pret;
 
-        public synthese()
+        public Synthese()
         {
             InitializeComponent();
             listBox1.Items.Add("Mensuelle");

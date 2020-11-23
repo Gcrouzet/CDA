@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppSynthese
 {
-    partial class synthese
+    partial class Synthese
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

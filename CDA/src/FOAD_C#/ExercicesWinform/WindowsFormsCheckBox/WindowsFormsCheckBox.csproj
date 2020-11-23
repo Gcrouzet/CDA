@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="checkBox.cs">
+    <Compile Include="CheckBoxRadio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="checkBox.Designer.cs">
-      <DependentUpon>checkBox.cs</DependentUpon>
+    <Compile Include="CheckBoxRadio.Designer.cs">
+      <DependentUpon>CheckBoxRadio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="checkBox.resx">
-      <DependentUpon>checkBox.cs</DependentUpon>
+    <EmbeddedResource Include="CheckBoxRadio.resx">
+      <DependentUpon>CheckBoxRadio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

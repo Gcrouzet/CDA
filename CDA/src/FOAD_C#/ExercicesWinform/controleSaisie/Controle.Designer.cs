@@ -166,7 +166,6 @@
             this.Name = "Controle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les contrôles";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.controle_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidertextbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

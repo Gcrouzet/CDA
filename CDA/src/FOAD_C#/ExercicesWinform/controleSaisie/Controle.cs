@@ -160,16 +160,16 @@ namespace controleSaisie
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void controle_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show
-            ("Fin de l’application ?", "FIN",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question,
-            MessageBoxDefaultButton.Button1);
-            if (dr == DialogResult.No)
-                e.Cancel = true;
-        }
+        //private void controle_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    DialogResult dr = MessageBox.Show
+        //    ("Fin de l’application ?", "FIN",
+        //    MessageBoxButtons.YesNo,
+        //    MessageBoxIcon.Question,
+        //    MessageBoxDefaultButton.Button1);
+        //    if (dr == DialogResult.No)
+        //        e.Cancel = true;
+        //}
 
         private void textNom_Leave(object sender, EventArgs e)
         {

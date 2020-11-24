@@ -260,7 +260,6 @@
             this.Controls.Add(this.labelNom);
             this.Name = "synthese";
             this.Text = "Emprunts";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.synthese_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

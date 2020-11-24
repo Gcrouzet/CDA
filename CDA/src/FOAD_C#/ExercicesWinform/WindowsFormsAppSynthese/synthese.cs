@@ -239,16 +239,16 @@ namespace WindowsFormsAppSynthese
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void synthese_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show
-            ("Fin de l’application ?", "FIN",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question,
-            MessageBoxDefaultButton.Button1);
-            if (dr == DialogResult.No)
-                e.Cancel = true;
-        }
+        //private void synthese_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    DialogResult dr = MessageBox.Show
+        //    ("Fin de l’application ?", "FIN",
+        //    MessageBoxButtons.YesNo,
+        //    MessageBoxIcon.Question,
+        //    MessageBoxDefaultButton.Button1);
+        //    if (dr == DialogResult.No)
+        //        e.Cancel = true;
+        //}
         /// <summary>
         /// verif nom + active/desactive Bouton Sauvegarder
         /// </summary>

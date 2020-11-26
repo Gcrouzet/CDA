@@ -29,9 +29,12 @@ namespace WindowsFormsAppMDI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxSaisie = new System.Windows.Forms.TextBox();
             this.buttonValider = new System.Windows.Forms.Button();
+            this.errorProviderSaisie = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSaisie)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -43,12 +46,13 @@ namespace WindowsFormsAppMDI
             this.label1.TabIndex = 0;
             this.label1.Text = "Tapez votre texte";
             // 
-            // textBox1
+            // textBoxSaisie
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxSaisie.Location = new System.Drawing.Point(31, 29);
+            this.textBoxSaisie.Name = "textBoxSaisie";
+            this.textBoxSaisie.Size = new System.Drawing.Size(256, 20);
+            this.textBoxSaisie.TabIndex = 1;
+            this.textBoxSaisie.TextChanged += new System.EventHandler(this.textBoxVotreTexte_TextChanged);
             // 
             // buttonValider
             // 
@@ -60,16 +64,21 @@ namespace WindowsFormsAppMDI
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
+            // errorProviderSaisie
+            // 
+            this.errorProviderSaisie.ContainerControl = this;
+            // 
             // FormSaisie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 70);
             this.Controls.Add(this.buttonValider);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxSaisie);
             this.Controls.Add(this.label1);
             this.Name = "FormSaisie";
             this.Text = "Saisie";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSaisie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,7 +87,8 @@ namespace WindowsFormsAppMDI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSaisie;
         private System.Windows.Forms.Button buttonValider;
+        private System.Windows.Forms.ErrorProvider errorProviderSaisie;
     }
 }

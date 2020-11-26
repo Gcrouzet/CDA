@@ -12,6 +12,9 @@ namespace WindowsFormsAppMDI
 {
     public partial class frmMenu : Form
     {
+        /// <summary>
+        /// incrémentation des forms
+        /// </summary>
         private int iAddiotionneur = 1 ;
         private int iControle = 1 ;
         private int iListboxCombobox = 1 ;
@@ -20,14 +23,18 @@ namespace WindowsFormsAppMDI
         private int iOpListBox = 1 ;
         private int iCheckBoxRadio = 1 ;
        
-
+      
         public frmMenu()
         {
             InitializeComponent();
             toolStripStatusLabelDate.Text = DateTime.Now.ToString("d");
             menuStripMain.MdiWindowListItem = fenetres;
         }
-
+        /// <summary>
+        /// Quitter l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
            {
             DialogResult dr = MessageBox.Show
@@ -36,25 +43,43 @@ namespace WindowsFormsAppMDI
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button1);
             if (dr == DialogResult.Yes)
-            {
-               this.Close();
+            { 
+              this.Close();
             }
                 
         }
-
+        /// <summary>
+        /// Deverouillage des boutons de l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sidentifierToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bienvenue");
-            toolStripButtonSIdentifier.Enabled = false;
-            sidentifierToolStripMenuItem1.Enabled = false;
-            phase1.Enabled = true;
-            phase2.Enabled = true;
-            phase3.Enabled = true;
-            fenetres.Enabled = true;
-            toolStripSplitButtonPhase3.Enabled = true;
             toolStripStatusLabelDerniereOperation.Text = "S'identifier";
+            FormLogin login = new FormLogin();
+            login.ShowDialog();
+
+            if (login.LoginIsOk)
+            {
+                MessageBox.Show("Bienvenue");
+                toolStripButtonSIdentifier.Enabled = false;
+                sidentifierToolStripMenuItem1.Enabled = false;
+                phase1.Enabled = true;
+                phase2.Enabled = true;
+                phase3.Enabled = true;
+                fenetres.Enabled = true;
+                toolStripSplitButtonPhase3.Enabled = true;
+
+            }
+
         }
-        
+
+        #region Form
+        /// <summary>
+        /// form Additionneur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void additionneurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -64,7 +89,11 @@ namespace WindowsFormsAppMDI
             addi.Show();
             toolStripStatusLabelDerniereOperation.Text = "Additionneur";
         }
-
+        /// <summary>
+        /// form Controle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void controleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
@@ -72,74 +101,160 @@ namespace WindowsFormsAppMDI
             controle.MdiParent = this;
             controle.Show();
             toolStripStatusLabelDerniereOperation.Text = "Controle";
-            
         }
-
+        /// <summary>
+        /// form ListboxCombobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboboxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComboBox_open();
+        }
+        private void comboBoxToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ComboBox_open();
+        }
+        private void ComboBox_open()
         {
             ListboxCombobox combo = new ListboxCombobox();
             combo.Text += " N° " + iListboxCombobox++;
             combo.MdiParent = this;
             combo.Show();
             toolStripStatusLabelDerniereOperation.Text = "ComboBox";
-           
         }
 
-        private void défilementToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// form Defilement
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void defilementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Defilement_open();
+        }
+        private void defilementToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Defilement_open();
+        }
+        private void Defilement_open()
         {
             Defilement defilement = new Defilement();
             defilement.Text += " N° " + iDefilement++;
             defilement.MdiParent = this;
             defilement.Show();
             toolStripStatusLabelDerniereOperation.Text = "Défilement";
-           
         }
 
-       
+        /// <summary>
+        /// form Synthese
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void synthèseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Synthese_open();
+
+        }
+        private void synthèseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Synthese_open();
+        }
+        private void Synthese_open()
         {
             Synthese synthese = new Synthese();
             synthese.Text += " N° " + iSynthese++;
             synthese.MdiParent = this;
             synthese.Show();
             toolStripStatusLabelDerniereOperation.Text = "Synthèse";
-           
         }
 
+        /// <summary>
+        /// form OpListBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBoxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListBox_open();
+        }
+        private void listBoxToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListBox_open();
+        }
+
+        private void ListBox_open()
         {
             OpListBox list = new OpListBox();
             list.Text += " N° " + iOpListBox++;
             list.MdiParent = this;
             list.Show();
             toolStripStatusLabelDerniereOperation.Text = "ListBox";
-          
         }
 
+        /// <summary>
+        /// form CheckBoxRadio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void casesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CheckBoxRadio check = new CheckBoxRadio();
+            Cases_open();
+        }
+        private void casesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Cases_open();
+        }
+
+        private void Cases_open()
+        {
+            toolStripStatusLabelDerniereOperation.Text = "Cases";
+            FormSaisie formSaisie = new FormSaisie();
+            formSaisie.MdiParent = this;
+            formSaisie.TexteSaisi += FormSaisie_TexteSaisi;
+            formSaisie.Show();
+        }
+
+        private void FormSaisie_TexteSaisi(string texte, FormSaisie s)
+        {
+            s.Close();
+            CheckBoxRadio check = new CheckBoxRadio(texte);
             check.Text += " N° " + iCheckBoxRadio++;
             check.MdiParent = this;
             check.Show();
-            toolStripStatusLabelDerniereOperation.Text = "Cases";
-           
         }
+        #endregion
 
+        #region Positionnement
+
+        /// <summary>
+        /// positionnement en cascade
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
-
+        /// <summary>
+        /// positionnement en horizontal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void horizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
            LayoutMdi(MdiLayout.TileHorizontal);
         }
-
+        /// <summary>
+        /// positionnement en vertical
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void verticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
+        #endregion
 
     }
 }

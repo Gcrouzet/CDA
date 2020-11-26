@@ -179,9 +179,9 @@ namespace WindowsFormsAppMDI
             // défilementToolStripMenuItem
             // 
             this.défilementToolStripMenuItem.Name = "défilementToolStripMenuItem";
-            this.défilementToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.défilementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.défilementToolStripMenuItem.Text = "Défilement";
-            this.défilementToolStripMenuItem.Click += new System.EventHandler(this.défilementToolStripMenuItem_Click);
+            this.défilementToolStripMenuItem.Click += new System.EventHandler(this.defilementToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -210,28 +210,28 @@ namespace WindowsFormsAppMDI
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // horizontalToolStripMenuItem
             // 
             this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.horizontalToolStripMenuItem.Text = "Horizontal";
             this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.horizontalToolStripMenuItem_Click);
             // 
             // verticalToolStripMenuItem
             // 
             this.verticalToolStripMenuItem.Name = "verticalToolStripMenuItem";
-            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.verticalToolStripMenuItem.Text = "Vertical";
             this.verticalToolStripMenuItem.Click += new System.EventHandler(this.verticalToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
             // 
             // contextMenuStrip1
             // 
@@ -294,37 +294,37 @@ namespace WindowsFormsAppMDI
             // casesToolStripMenuItem1
             // 
             this.casesToolStripMenuItem1.Name = "casesToolStripMenuItem1";
-            this.casesToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.casesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.casesToolStripMenuItem1.Text = "Cases";
-            this.casesToolStripMenuItem1.Click += new System.EventHandler(this.casesToolStripMenuItem_Click);
+            this.casesToolStripMenuItem1.Click += new System.EventHandler(this.casesToolStripMenuItem1_Click);
             // 
             // listBoxToolStripMenuItem1
             // 
             this.listBoxToolStripMenuItem1.Name = "listBoxToolStripMenuItem1";
-            this.listBoxToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.listBoxToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.listBoxToolStripMenuItem1.Text = "ListBox";
-            this.listBoxToolStripMenuItem1.Click += new System.EventHandler(this.listBoxToolStripMenuItem_Click);
+            this.listBoxToolStripMenuItem1.Click += new System.EventHandler(this.listBoxToolStripMenuItem1_Click);
             // 
             // comboBoxToolStripMenuItem1
             // 
             this.comboBoxToolStripMenuItem1.Name = "comboBoxToolStripMenuItem1";
-            this.comboBoxToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.comboBoxToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.comboBoxToolStripMenuItem1.Text = "ComboBox";
-            this.comboBoxToolStripMenuItem1.Click += new System.EventHandler(this.comboboxToolStripMenuItem_Click);
+            this.comboBoxToolStripMenuItem1.Click += new System.EventHandler(this.comboBoxToolStripMenuItem1_Click);
             // 
             // défilementToolStripMenuItem1
             // 
             this.défilementToolStripMenuItem1.Name = "défilementToolStripMenuItem1";
-            this.défilementToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.défilementToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.défilementToolStripMenuItem1.Text = "Défilement";
-            this.défilementToolStripMenuItem1.Click += new System.EventHandler(this.défilementToolStripMenuItem_Click);
+            this.défilementToolStripMenuItem1.Click += new System.EventHandler(this.defilementToolStripMenuItem1_Click);
             // 
             // synthèseToolStripMenuItem1
             // 
             this.synthèseToolStripMenuItem1.Name = "synthèseToolStripMenuItem1";
-            this.synthèseToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.synthèseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.synthèseToolStripMenuItem1.Text = "Synthèse";
-            this.synthèseToolStripMenuItem1.Click += new System.EventHandler(this.synthèseToolStripMenuItem_Click);
+            this.synthèseToolStripMenuItem1.Click += new System.EventHandler(this.synthèseToolStripMenuItem1_Click);
             // 
             // statusStrip1
             // 

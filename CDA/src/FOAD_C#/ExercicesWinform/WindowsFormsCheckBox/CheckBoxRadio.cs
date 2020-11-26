@@ -20,6 +20,11 @@ namespace WindowsFormsCheckBox
         {
             InitializeComponent();
         }
+        public CheckBoxRadio(string str)
+        {
+            InitializeComponent();
+            textBox.Text = str;
+        }
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {

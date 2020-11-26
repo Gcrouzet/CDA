@@ -84,7 +84,6 @@ namespace WindowsFormsAppMDI
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(1086, 24);
             this.menuStripMain.TabIndex = 3;
-            this.menuStripMain.Text = "menuStrip1";
             // 
             // connectionToolStripMenuItem
             // 
@@ -179,7 +178,7 @@ namespace WindowsFormsAppMDI
             // défilementToolStripMenuItem
             // 
             this.défilementToolStripMenuItem.Name = "défilementToolStripMenuItem";
-            this.défilementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.défilementToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.défilementToolStripMenuItem.Text = "Défilement";
             this.défilementToolStripMenuItem.Click += new System.EventHandler(this.defilementToolStripMenuItem_Click);
             // 
@@ -290,39 +289,40 @@ namespace WindowsFormsAppMDI
             this.toolStripSplitButtonPhase3.Name = "toolStripSplitButtonPhase3";
             this.toolStripSplitButtonPhase3.Size = new System.Drawing.Size(60, 22);
             this.toolStripSplitButtonPhase3.Text = "Phase3";
+            this.toolStripSplitButtonPhase3.ButtonClick += new System.EventHandler(this.toolStripSplitButtonPhase3_ButtonClick);
             // 
             // casesToolStripMenuItem1
             // 
             this.casesToolStripMenuItem1.Name = "casesToolStripMenuItem1";
-            this.casesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.casesToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.casesToolStripMenuItem1.Text = "Cases";
             this.casesToolStripMenuItem1.Click += new System.EventHandler(this.casesToolStripMenuItem1_Click);
             // 
             // listBoxToolStripMenuItem1
             // 
             this.listBoxToolStripMenuItem1.Name = "listBoxToolStripMenuItem1";
-            this.listBoxToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listBoxToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.listBoxToolStripMenuItem1.Text = "ListBox";
             this.listBoxToolStripMenuItem1.Click += new System.EventHandler(this.listBoxToolStripMenuItem1_Click);
             // 
             // comboBoxToolStripMenuItem1
             // 
             this.comboBoxToolStripMenuItem1.Name = "comboBoxToolStripMenuItem1";
-            this.comboBoxToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.comboBoxToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.comboBoxToolStripMenuItem1.Text = "ComboBox";
             this.comboBoxToolStripMenuItem1.Click += new System.EventHandler(this.comboBoxToolStripMenuItem1_Click);
             // 
             // défilementToolStripMenuItem1
             // 
             this.défilementToolStripMenuItem1.Name = "défilementToolStripMenuItem1";
-            this.défilementToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.défilementToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.défilementToolStripMenuItem1.Text = "Défilement";
             this.défilementToolStripMenuItem1.Click += new System.EventHandler(this.defilementToolStripMenuItem1_Click);
             // 
             // synthèseToolStripMenuItem1
             // 
             this.synthèseToolStripMenuItem1.Name = "synthèseToolStripMenuItem1";
-            this.synthèseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.synthèseToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.synthèseToolStripMenuItem1.Text = "Synthèse";
             this.synthèseToolStripMenuItem1.Click += new System.EventHandler(this.synthèseToolStripMenuItem1_Click);
             // 
@@ -359,7 +359,8 @@ namespace WindowsFormsAppMDI
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "frmMenu";
-            this.Text = "Form1";
+            this.Text = "MDI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

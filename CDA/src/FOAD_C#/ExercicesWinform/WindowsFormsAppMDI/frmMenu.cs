@@ -61,7 +61,7 @@ namespace WindowsFormsAppMDI
 
             if (login.LoginIsOk)
             {
-                MessageBox.Show("Bienvenue");
+                MessageBox.Show("        Bienvenue");
                 toolStripButtonSIdentifier.Enabled = false;
                 sidentifierToolStripMenuItem1.Enabled = false;
                 phase1.Enabled = true;
@@ -256,5 +256,9 @@ namespace WindowsFormsAppMDI
         }
         #endregion
 
+        private void toolStripSplitButtonPhase3_ButtonClick(object sender, EventArgs e)
+        {
+            toolStripSplitButtonPhase3.ShowDropDown();    
+        }
     }
 }

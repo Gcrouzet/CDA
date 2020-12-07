@@ -111,7 +111,7 @@ namespace ClassLibraryProduction
             }
         }
 
-        public bool ChangementProduction()
+        public bool DemarrerProduction()
         {
             Thread a = new Thread(ThreadProd);
 

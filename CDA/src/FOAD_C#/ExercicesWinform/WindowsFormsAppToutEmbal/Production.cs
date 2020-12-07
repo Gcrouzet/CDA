@@ -46,16 +46,18 @@ namespace WindowsFormsAppToutEmbal
         private void MajIHM()
         {
             textBoxNbCaisseA.Text = CaissesA.NbCaissesDepuisDemarrage.ToString();
-            textBoxTauxDefaulHeureA.Text = CaissesA.CalculTauxDefautParHeure().ToString("N4");
-            textBoxTauxDepuisDemarrageA.Text = CaissesA.CalculTauxDefaut().ToString();
+            //textBoxTauxDefaulHeureA.Text = CaissesA.CalculTauxDefautParHeure().ToString("N4");
+            //textBoxTauxDepuisDemarrageA.Text = CaissesA.CalculBoiteDefaut().ToString();
             progressBarProdA.Value = CaissesA.NbCaissesDepuisDemarrage;
+
             textBoxNbCaisseB.Text = CaissesB.NbCaissesDepuisDemarrage.ToString();
-            textBoxTauxDefaulHeureB.Text = CaissesB.CalculTauxDefautParHeure().ToString("N4");
-            textBoxTauxDepuisDemarrageB.Text = CaissesB.CalculTauxDefaut().ToString();
+            //textBoxTauxDefaulHeureB.Text = CaissesB.CalculTauxDefautParHeure().ToString("N4");
+            //textBoxTauxDepuisDemarrageB.Text = CaissesB.CalculBoiteDefaut().ToString();
             progressBarProdB.Value = CaissesB.NbCaissesDepuisDemarrage;
+
             textBoxNbCaisseC.Text = CaissesC.NbCaissesDepuisDemarrage.ToString();
-            textBoxTauxDefaulHeureC.Text = CaissesC.CalculTauxDefautParHeure().ToString("N4");
-            textBoxTauxDepuisDemarrageC.Text = CaissesC.CalculTauxDefaut().ToString();
+            //textBoxTauxDefaulHeureC.Text = CaissesC.CalculTauxDefautParHeure().ToString("N4");
+            //textBoxTauxDepuisDemarrageC.Text = CaissesC.CalculBoiteDefaut().ToString();
             progressBarProdC.Value = CaissesC.NbCaissesDepuisDemarrage;
         }
 
@@ -76,21 +78,21 @@ namespace WindowsFormsAppToutEmbal
         #region Gestion de la production
         private void DemarrerA_Click(object sender, EventArgs e)
         {
-            CaissesA.ChangementProduction();
+            CaissesA.DemarrerProduction();
             DemarrerA.Enabled = false;
             ArreterA.Enabled = true;
         }
 
         private void DemarrerB_Click(object sender, EventArgs e)
         {
-            CaissesB.ChangementProduction();
+            CaissesB.DemarrerProduction();
             DemarrerB.Enabled = false;
             ArreterB.Enabled = true;
         }
 
         private void DemarrerC_Click(object sender, EventArgs e)
         {
-            CaissesC.ChangementProduction();
+            CaissesC.DemarrerProduction();
             DemarrerC.Enabled = false;
             ArreterC.Enabled = true;
         }
@@ -118,21 +120,21 @@ namespace WindowsFormsAppToutEmbal
 
         private void ContinuerA_Click(object sender, EventArgs e)
         {
-            CaissesA.ChangementProduction();
+            CaissesA.DemarrerProduction();
             ContinuerA.Enabled = false;
             ArreterA.Enabled = true;
         }
 
         private void ContinuerB_Click(object sender, EventArgs e)
         {
-            CaissesB.ChangementProduction();
+            CaissesB.DemarrerProduction();
             ContinuerB.Enabled = false;
             ArreterB.Enabled = true;
         }
 
         private void ContinuerC_Click(object sender, EventArgs e)
         {
-            CaissesA.ChangementProduction();
+            CaissesA.DemarrerProduction();
             ContinuerC.Enabled = false;
             ArreterC.Enabled = true;
         }

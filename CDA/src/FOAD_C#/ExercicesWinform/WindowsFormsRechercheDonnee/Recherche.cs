@@ -30,7 +30,13 @@ namespace WindowsFormsRechercheDonnee
                 sqlConnect.Open();
                 sqlCommande = new SqlCommand();
                 sqlCommande.Connection = sqlConnect;
-                string strSql = "Select * from fournisseur where fournisseur_id ='" + textBoxCodeFournisseur.Text + "'";
+
+                SqlParameter sqlCodeFournisseur = new SqlParameter("@codefournisseur", DbType.Int64);
+                sqlCodeFournisseur.Value = textBoxCodeFournisseur.Text;
+                sqlCommande.Parameters.Add(sqlCodeFournisseur);
+
+
+                string strSql = "Select * from fournisseur where fournisseur_id =@codefournisseur";
                 sqlCommande.CommandType = CommandType.Text;
                 sqlCommande.CommandText = strSql;
                 sqlReader = sqlCommande.ExecuteReader();

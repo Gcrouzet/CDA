@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsConnexionALaBas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsRechercheDonnee", "WindowsFormsRechercheDonnee\WindowsFormsRechercheDonnee.csproj", "{350433EE-1245-4C71-9994-684D642A3619}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppRechercheLigne", "WindowsFormsAppRechercheLigne\WindowsFormsAppRechercheLigne.csproj", "{46E465F9-D085-4FE9-ADDC-AFBC9B16B76A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppMAJTable", "WindowsFormsAppMAJTable\WindowsFormsAppMAJTable.csproj", "{D604C63E-8BA8-4D7E-8277-803EE7294A67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{350433EE-1245-4C71-9994-684D642A3619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350433EE-1245-4C71-9994-684D642A3619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350433EE-1245-4C71-9994-684D642A3619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E465F9-D085-4FE9-ADDC-AFBC9B16B76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E465F9-D085-4FE9-ADDC-AFBC9B16B76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E465F9-D085-4FE9-ADDC-AFBC9B16B76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E465F9-D085-4FE9-ADDC-AFBC9B16B76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D604C63E-8BA8-4D7E-8277-803EE7294A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D604C63E-8BA8-4D7E-8277-803EE7294A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D604C63E-8BA8-4D7E-8277-803EE7294A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D604C63E-8BA8-4D7E-8277-803EE7294A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

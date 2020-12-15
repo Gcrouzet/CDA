@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -26,7 +27,12 @@ namespace WindowsFormsRechercheDonnee
             try
             {
                 sqlConnect = new SqlConnection();
-                sqlConnect.ConnectionString = "Data Source=CGABI\\SQLEXPRESS;Initial Catalog=Papyrus;Integrated Security=True";
+                //sqlConnect.ConnectionString = "Data Source=CGABI\\SQLEXPRESS;Initial Catalog=Papyrus;Integrated Security=True";
+                ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
+                if (oConfig != null)
+                {
+                    sqlConnect.ConnectionString = oConfig.ConnectionString;
+                }
                 sqlConnect.Open();
                 sqlCommande = new SqlCommand();
                 sqlCommande.Connection = sqlConnect;

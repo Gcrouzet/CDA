@@ -24,10 +24,14 @@ namespace WindowsFormsAppMAJTable
         }
         private void MaJComboBoxListeFournisseur()
         {
-            comboBoxListeFournisseur.Items.Clear();
+            //comboBoxListeFournisseur.Items.Clear();
+            comboBoxListeFournisseur.DisplayMember = "Value";
+            comboBoxListeFournisseur.ValueMember = "Key";
+            Dictionary<int, string> listeFournisseurs = new Dictionary<int, string>();
+
             sqlCommande = new SqlCommand();
             sqlCommande.Connection = sqlConnect;
-            String strSql = "select fournisseur_nom from fournisseur";
+            String strSql = "select fournisseur_id ,fournisseur_nom from fournisseur";
             sqlCommande.CommandType = CommandType.Text;
             sqlCommande.CommandText = strSql;
             sqlReader = sqlCommande.ExecuteReader();
@@ -36,10 +40,19 @@ namespace WindowsFormsAppMAJTable
             {
                 while (sqlReader.Read())
                 {
-                    this.comboBoxListeFournisseur.Items.Add(sqlReader.GetString(0));
+                    listeFournisseurs.Add(sqlReader.GetInt32(0), sqlReader.GetString(1));
+
                 }
             }
+            comboBoxListeFournisseur.DataSource = new BindingSource(listeFournisseurs, null);
+            textBoxNom.Clear();
+            textBoxAdresse.Clear();
+            textBoxVille.Clear();
+            textBoxCP.Clear();
+            textBoxCodeFournisseur.Clear();
+            comboBoxListeFournisseur.SelectedIndex = -1;
             sqlReader.Close();
+
         }
 
         #region bouton
@@ -58,10 +71,10 @@ namespace WindowsFormsAppMAJTable
                 sqlCommande.Connection = sqlConnect;
 
 
-                SqlParameter sqlCodeFournisseur = new SqlParameter("@nomFournisseur", DbType.Int32);
+                SqlParameter sqlCodeFournisseur = new SqlParameter("@codeFournisseur", DbType.Int32);
                 sqlCodeFournisseur.Value = textBoxCodeFournisseur.Text;
                 sqlCommande.Parameters.Add(sqlCodeFournisseur);
-                string strSql = "select * from fournisseur where fournisseur_id =@nomFournisseur";
+                string strSql = "select * from fournisseur where fournisseur_id =@codeFournisseur";
                 sqlCommande.CommandType = CommandType.Text;
                 sqlCommande.CommandText = strSql;
                 sqlReader = sqlCommande.ExecuteReader();
@@ -110,7 +123,7 @@ namespace WindowsFormsAppMAJTable
                 sqlCommande.CommandType = CommandType.Text;
                 sqlCommande.CommandText = strSql;
                 sqlReader = sqlCommande.ExecuteReader();
-                if(sqlReader.RecordsAffected > 0)
+                if (sqlReader.RecordsAffected > 0)
                 {
                     MessageBox.Show("Le fournisseur avec l'id " + textBoxCodeFournisseur.Text + " a été supprimé");
                 }
@@ -192,7 +205,7 @@ namespace WindowsFormsAppMAJTable
                 sqlReader = sqlCommande.ExecuteReader();
 
                 MessageBox.Show("Vous avez ajouté un fournisseur, Bien joué");
-         
+
                 sqlReader.Close();
                 MaJComboBoxListeFournisseur();
             }
@@ -206,7 +219,7 @@ namespace WindowsFormsAppMAJTable
             }
         }
 
-        
+
 
 
 
@@ -246,48 +259,51 @@ namespace WindowsFormsAppMAJTable
 
         private void comboBoxListeFournisseur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sqlConnect = new SqlConnection();
-            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
-            if (oConfig != null)
+            if (this.comboBoxListeFournisseur.SelectedIndex >= 0)
             {
-                sqlConnect.ConnectionString = oConfig.ConnectionString;
-            }
-
-            try
-            {
-                sqlConnect.Open();
-                sqlCommande = new SqlCommand();
-                sqlCommande.Connection = sqlConnect;
-
-                SqlParameter sqlCodeFournisseur = new SqlParameter("@nomFournisseur", DbType.String);
-                sqlCodeFournisseur.Value = comboBoxListeFournisseur.Text;
-                sqlCommande.Parameters.Add(sqlCodeFournisseur);
-                string strSql = "select * from fournisseur where fournisseur_nom=@nomFournisseur";
-                sqlCommande.CommandType = CommandType.Text;
-                sqlCommande.CommandText = strSql;
-                sqlReader = sqlCommande.ExecuteReader();
-                if (sqlReader.HasRows)
+                sqlConnect = new SqlConnection();
+                ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
+                if (oConfig != null)
                 {
-                    while (sqlReader.Read())
-                    {
-                        textBoxCodeFournisseur.Text = sqlReader.GetInt32(0).ToString();
-                        textBoxNom.Text = sqlReader.GetString(1);
-                        textBoxAdresse.Text = sqlReader.GetString(2);
-                        textBoxCP.Text = sqlReader.GetString(3);
-                        textBoxVille.Text = sqlReader.GetString(4);
-                    }
+                    sqlConnect.ConnectionString = oConfig.ConnectionString;
                 }
 
-                sqlReader.Close();
+                try
+                {
+                    sqlConnect.Open();
+                    sqlCommande = new SqlCommand();
+                    sqlCommande.Connection = sqlConnect;
 
-            }
-            catch (SqlException se)
-            {
-                MessageBox.Show(se.Message);
-            }
-            finally
-            {
-                sqlConnect.Close();
+                    SqlParameter sqlCodeFournisseur = new SqlParameter("@codeFournisseur", DbType.String);
+                    sqlCodeFournisseur.Value = comboBoxListeFournisseur.SelectedValue;
+                    sqlCommande.Parameters.Add(sqlCodeFournisseur);
+                    string strSql = "select * from fournisseur where fournisseur_id=@codeFournisseur";
+                    sqlCommande.CommandType = CommandType.Text;
+                    sqlCommande.CommandText = strSql;
+                    sqlReader = sqlCommande.ExecuteReader();
+                    if (sqlReader.HasRows)
+                    {
+                        while (sqlReader.Read())
+                        {
+                            textBoxCodeFournisseur.Text = sqlReader.GetInt32(0).ToString();
+                            textBoxNom.Text = sqlReader.GetString(1);
+                            textBoxAdresse.Text = sqlReader.GetString(2);
+                            textBoxCP.Text = sqlReader.GetString(3);
+                            textBoxVille.Text = sqlReader.GetString(4);
+                        }
+                    }
+
+                    sqlReader.Close();
+
+                }
+                catch (SqlException se)
+                {
+                    MessageBox.Show(se.Message);
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
             }
         }
     }

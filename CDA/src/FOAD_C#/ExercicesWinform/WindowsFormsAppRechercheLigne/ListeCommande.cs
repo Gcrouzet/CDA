@@ -24,6 +24,10 @@ namespace WindowsFormsAppRechercheLigne
 
         private void ListeCommande_Load(object sender, EventArgs e)
         {
+            comboBoxListeFournisseur.DisplayMember = "Value";
+            comboBoxListeFournisseur.ValueMember = "Key";
+            Dictionary<int, string> listeFournisseurs = new Dictionary<int, string>();
+
             sqlConnect = new SqlConnection();
             ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
             if (oConfig != null)
@@ -35,7 +39,7 @@ namespace WindowsFormsAppRechercheLigne
                 sqlConnect.Open();
                 sqlCommande = new SqlCommand();
                 sqlCommande.Connection = sqlConnect;
-                string strSql = "select fournisseur_nom from fournisseur";
+                string strSql = "select fournisseur_id ,fournisseur_nom  from fournisseur";
                 sqlCommande.CommandType = CommandType.Text;
                 sqlCommande.CommandText = strSql;
                 sqlReader = sqlCommande.ExecuteReader();
@@ -44,7 +48,7 @@ namespace WindowsFormsAppRechercheLigne
                 {
                     while (sqlReader.Read())
                     {
-                        this.comboBoxListeFournisseur.Items.Add(sqlReader.GetString(0));
+                        listeFournisseurs.Add(sqlReader.GetInt32(0), sqlReader.GetString(1));
                     }
                 }
 
@@ -58,63 +62,60 @@ namespace WindowsFormsAppRechercheLigne
             {
                 sqlConnect.Close();
             }
+            this.comboBoxListeFournisseur.DataSource = new BindingSource(listeFournisseurs, null);
+            this.comboBoxListeFournisseur.SelectedIndex = -1;
         }
 
         private void comboBoxListeFournisseur_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBoxCommandes.Items.Clear();
-            sqlConnect = new SqlConnection();
-            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
-            if (oConfig != null)
+            if (this.comboBoxListeFournisseur.SelectedIndex >= 0)
             {
-                sqlConnect.ConnectionString = oConfig.ConnectionString;
-            }
-
-            try
-            {
-                sqlConnect.Open();
-                sqlCommande = new SqlCommand();
-                sqlCommande.Connection = sqlConnect;
-
-                SqlParameter sqlCodeFournisseur = new SqlParameter("@nomFournisseur", DbType.String);
-                sqlCodeFournisseur.Value = comboBoxListeFournisseur.Text;
-                sqlCommande.Parameters.Add(sqlCodeFournisseur);
-                string strSql = "select * from commande  " +
-                    "inner join ordre_commande  " +
-                    "on commande.commande_id = ordre_commande.commande_id " +
-                    "inner join produits  " +
-                    "on ordre_commande.produits_id = produits.produits_id " +
-                    "inner join fournisseur " +
-                    "on produits.fournisseur_id = fournisseur.fournisseur_id " +
-                    "where fournisseur_nom =@nomFournisseur";
-                sqlCommande.CommandType = CommandType.Text;
-                sqlCommande.CommandText = strSql;
-                sqlReader = sqlCommande.ExecuteReader();
-                if (sqlReader.HasRows)
+                sqlConnect = new SqlConnection();
+                ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
+                if (oConfig != null)
                 {
-                    while (sqlReader.Read())
-                    {
-                        string numCommande = sqlReader.GetInt32(0).ToString();
-                        string dateCommande = sqlReader.GetDateTime(1).ToString("d");
-                        string commentaireCommande = sqlReader.GetString(2);
-                        listBoxCommandes.Items.Add(numCommande);
-                        listBoxCommandes.Items.Add(dateCommande);
-                        listBoxCommandes.Items.Add(commentaireCommande);
-                    }
+                    sqlConnect.ConnectionString = oConfig.ConnectionString;
                 }
 
-                sqlReader.Close();
+                try
+                {
+                    sqlConnect.Open();
+                    sqlCommande = new SqlCommand();
+                    sqlCommande.Connection = sqlConnect;
 
-            }
-            catch (SqlException se)
-            {
-                MessageBox.Show(se.Message);
-            }
-            finally
-            {
-                sqlConnect.Close();
-            }
+                    SqlParameter sqlCodeFournisseur = new SqlParameter("@codeFournisseur", DbType.Int32);
+                    sqlCodeFournisseur.Value = comboBoxListeFournisseur.SelectedValue;
+                    sqlCommande.Parameters.Add(sqlCodeFournisseur);
 
+                    sqlCommande.CommandType = CommandType.StoredProcedure;
+                    sqlCommande.CommandText = "GetCommandesParFournisseur";
+                    sqlReader = sqlCommande.ExecuteReader();
+                    if (sqlReader.HasRows)
+                    {
+                        while (sqlReader.Read())
+                        {
+                            string numCommande = sqlReader.GetInt32(0).ToString();
+                            string dateCommande = sqlReader.GetDateTime(1).ToString("d");
+                            string commentaireCommande = sqlReader.GetString(2);
+                            listBoxCommandes.Items.Add(numCommande);
+                            listBoxCommandes.Items.Add(dateCommande);
+                            listBoxCommandes.Items.Add(commentaireCommande);
+                        }
+                    }
+
+                    sqlReader.Close();
+
+                }
+                catch (SqlException se)
+                {
+                    MessageBox.Show(se.Message);
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
+            }
         }
 
         private void buttonQuitter_Click(object sender, EventArgs e)

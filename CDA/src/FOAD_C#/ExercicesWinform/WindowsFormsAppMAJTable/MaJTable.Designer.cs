@@ -31,7 +31,6 @@ namespace WindowsFormsAppMAJTable
         {
             this.labelCodeFournisseur = new System.Windows.Forms.Label();
             this.textBoxCodeFournisseur = new System.Windows.Forms.TextBox();
-            this.buttonCreer = new System.Windows.Forms.Button();
             this.labelNom = new System.Windows.Forms.Label();
             this.labelAdresse = new System.Windows.Forms.Label();
             this.labelCodePostal = new System.Windows.Forms.Label();
@@ -51,115 +50,94 @@ namespace WindowsFormsAppMAJTable
             // labelCodeFournisseur
             // 
             this.labelCodeFournisseur.AutoSize = true;
-            this.labelCodeFournisseur.Location = new System.Drawing.Point(8, 47);
-            this.labelCodeFournisseur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCodeFournisseur.Location = new System.Drawing.Point(12, 72);
             this.labelCodeFournisseur.Name = "labelCodeFournisseur";
-            this.labelCodeFournisseur.Size = new System.Drawing.Size(86, 13);
+            this.labelCodeFournisseur.Size = new System.Drawing.Size(130, 20);
             this.labelCodeFournisseur.TabIndex = 0;
             this.labelCodeFournisseur.Text = "Code fournisseur";
             // 
             // textBoxCodeFournisseur
             // 
-            this.textBoxCodeFournisseur.Location = new System.Drawing.Point(129, 43);
-            this.textBoxCodeFournisseur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCodeFournisseur.Location = new System.Drawing.Point(194, 66);
             this.textBoxCodeFournisseur.Name = "textBoxCodeFournisseur";
-            this.textBoxCodeFournisseur.Size = new System.Drawing.Size(60, 20);
+            this.textBoxCodeFournisseur.Size = new System.Drawing.Size(88, 26);
             this.textBoxCodeFournisseur.TabIndex = 1;
             this.textBoxCodeFournisseur.TextChanged += new System.EventHandler(this.textBoxCodeFournisseur_TextChanged);
-            // 
-            // buttonCreer
-            // 
-            this.buttonCreer.Location = new System.Drawing.Point(213, 166);
-            this.buttonCreer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonCreer.Name = "buttonCreer";
-            this.buttonCreer.Size = new System.Drawing.Size(76, 19);
-            this.buttonCreer.TabIndex = 3;
-            this.buttonCreer.Text = "Créer";
-            this.buttonCreer.UseVisualStyleBackColor = true;
-            this.buttonCreer.Click += new System.EventHandler(this.buttonCreer_Click);
             // 
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(307, 49);
-            this.labelNom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNom.Location = new System.Drawing.Point(460, 75);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(29, 13);
+            this.labelNom.Size = new System.Drawing.Size(42, 20);
             this.labelNom.TabIndex = 4;
             this.labelNom.Text = "Nom";
             // 
             // labelAdresse
             // 
             this.labelAdresse.AutoSize = true;
-            this.labelAdresse.Location = new System.Drawing.Point(307, 96);
-            this.labelAdresse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAdresse.Location = new System.Drawing.Point(460, 148);
             this.labelAdresse.Name = "labelAdresse";
-            this.labelAdresse.Size = new System.Drawing.Size(45, 13);
+            this.labelAdresse.Size = new System.Drawing.Size(68, 20);
             this.labelAdresse.TabIndex = 5;
             this.labelAdresse.Text = "Adresse";
             // 
             // labelCodePostal
             // 
             this.labelCodePostal.AutoSize = true;
-            this.labelCodePostal.Location = new System.Drawing.Point(307, 144);
-            this.labelCodePostal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCodePostal.Location = new System.Drawing.Point(460, 222);
             this.labelCodePostal.Name = "labelCodePostal";
-            this.labelCodePostal.Size = new System.Drawing.Size(64, 13);
+            this.labelCodePostal.Size = new System.Drawing.Size(95, 20);
             this.labelCodePostal.TabIndex = 6;
             this.labelCodePostal.Text = "Code Postal";
             // 
             // labelVille
             // 
             this.labelVille.AutoSize = true;
-            this.labelVille.Location = new System.Drawing.Point(307, 193);
-            this.labelVille.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelVille.Location = new System.Drawing.Point(460, 297);
             this.labelVille.Name = "labelVille";
-            this.labelVille.Size = new System.Drawing.Size(26, 13);
+            this.labelVille.Size = new System.Drawing.Size(38, 20);
             this.labelVille.TabIndex = 7;
             this.labelVille.Text = "Ville";
             // 
             // textBoxAdresse
             // 
-            this.textBoxAdresse.Location = new System.Drawing.Point(382, 94);
-            this.textBoxAdresse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAdresse.Location = new System.Drawing.Point(573, 145);
             this.textBoxAdresse.Name = "textBoxAdresse";
-            this.textBoxAdresse.ReadOnly = true;
-            this.textBoxAdresse.Size = new System.Drawing.Size(87, 20);
+            this.textBoxAdresse.Size = new System.Drawing.Size(128, 26);
             this.textBoxAdresse.TabIndex = 8;
+            this.textBoxAdresse.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(382, 47);
-            this.textBoxNom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNom.Location = new System.Drawing.Point(573, 72);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.ReadOnly = true;
-            this.textBoxNom.Size = new System.Drawing.Size(87, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(128, 26);
             this.textBoxNom.TabIndex = 9;
+            this.textBoxNom.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxCP
             // 
-            this.textBoxCP.Location = new System.Drawing.Point(382, 142);
-            this.textBoxCP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCP.Location = new System.Drawing.Point(573, 219);
             this.textBoxCP.Name = "textBoxCP";
-            this.textBoxCP.ReadOnly = true;
-            this.textBoxCP.Size = new System.Drawing.Size(87, 20);
+            this.textBoxCP.Size = new System.Drawing.Size(128, 26);
             this.textBoxCP.TabIndex = 10;
+            this.textBoxCP.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxVille
             // 
-            this.textBoxVille.Location = new System.Drawing.Point(382, 191);
-            this.textBoxVille.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxVille.Location = new System.Drawing.Point(573, 294);
             this.textBoxVille.Name = "textBoxVille";
-            this.textBoxVille.ReadOnly = true;
-            this.textBoxVille.Size = new System.Drawing.Size(87, 20);
+            this.textBoxVille.Size = new System.Drawing.Size(128, 26);
             this.textBoxVille.TabIndex = 11;
+            this.textBoxVille.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(213, 189);
-            this.buttonAjouter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAjouter.Enabled = false;
+            this.buttonAjouter.Location = new System.Drawing.Point(320, 255);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(76, 22);
+            this.buttonAjouter.Size = new System.Drawing.Size(114, 34);
             this.buttonAjouter.TabIndex = 12;
             this.buttonAjouter.Text = "Ajouter";
             this.buttonAjouter.UseVisualStyleBackColor = true;
@@ -167,10 +145,10 @@ namespace WindowsFormsAppMAJTable
             // 
             // buttonSupprimer
             // 
-            this.buttonSupprimer.Location = new System.Drawing.Point(39, 190);
-            this.buttonSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSupprimer.Enabled = false;
+            this.buttonSupprimer.Location = new System.Drawing.Point(58, 292);
             this.buttonSupprimer.Name = "buttonSupprimer";
-            this.buttonSupprimer.Size = new System.Drawing.Size(76, 21);
+            this.buttonSupprimer.Size = new System.Drawing.Size(114, 32);
             this.buttonSupprimer.TabIndex = 13;
             this.buttonSupprimer.Text = "Supprimer";
             this.buttonSupprimer.UseVisualStyleBackColor = true;
@@ -178,10 +156,9 @@ namespace WindowsFormsAppMAJTable
             // 
             // buttonRechercher
             // 
-            this.buttonRechercher.Location = new System.Drawing.Point(213, 44);
-            this.buttonRechercher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRechercher.Location = new System.Drawing.Point(320, 68);
             this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(76, 19);
+            this.buttonRechercher.Size = new System.Drawing.Size(114, 29);
             this.buttonRechercher.TabIndex = 2;
             this.buttonRechercher.Text = "Rechercher";
             this.buttonRechercher.UseVisualStyleBackColor = true;
@@ -189,37 +166,41 @@ namespace WindowsFormsAppMAJTable
             // 
             // buttonModifier
             // 
-            this.buttonModifier.Location = new System.Drawing.Point(39, 166);
-            this.buttonModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonModifier.Enabled = false;
+            this.buttonModifier.Location = new System.Drawing.Point(58, 255);
             this.buttonModifier.Name = "buttonModifier";
-            this.buttonModifier.Size = new System.Drawing.Size(76, 20);
+            this.buttonModifier.Size = new System.Drawing.Size(114, 31);
             this.buttonModifier.TabIndex = 14;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
+            this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
             // comboBoxListeFournisseur
             // 
+            this.comboBoxListeFournisseur.Enabled = false;
             this.comboBoxListeFournisseur.FormattingEnabled = true;
-            this.comboBoxListeFournisseur.Location = new System.Drawing.Point(129, 12);
+            this.comboBoxListeFournisseur.Location = new System.Drawing.Point(194, 18);
+            this.comboBoxListeFournisseur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxListeFournisseur.Name = "comboBoxListeFournisseur";
-            this.comboBoxListeFournisseur.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxListeFournisseur.Size = new System.Drawing.Size(180, 28);
             this.comboBoxListeFournisseur.TabIndex = 15;
             this.comboBoxListeFournisseur.SelectedIndexChanged += new System.EventHandler(this.comboBoxListeFournisseur_SelectedIndexChanged);
             // 
             // labelListeFournisseur
             // 
             this.labelListeFournisseur.AutoSize = true;
-            this.labelListeFournisseur.Location = new System.Drawing.Point(8, 15);
+            this.labelListeFournisseur.Location = new System.Drawing.Point(12, 23);
+            this.labelListeFournisseur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelListeFournisseur.Name = "labelListeFournisseur";
-            this.labelListeFournisseur.Size = new System.Drawing.Size(86, 13);
+            this.labelListeFournisseur.Size = new System.Drawing.Size(131, 20);
             this.labelListeFournisseur.TabIndex = 16;
             this.labelListeFournisseur.Text = "Liste Fournisseur";
             // 
             // MaJTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 253);
+            this.ClientSize = new System.Drawing.Size(734, 389);
             this.Controls.Add(this.labelListeFournisseur);
             this.Controls.Add(this.comboBoxListeFournisseur);
             this.Controls.Add(this.buttonModifier);
@@ -233,12 +214,11 @@ namespace WindowsFormsAppMAJTable
             this.Controls.Add(this.labelCodePostal);
             this.Controls.Add(this.labelAdresse);
             this.Controls.Add(this.labelNom);
-            this.Controls.Add(this.buttonCreer);
             this.Controls.Add(this.buttonRechercher);
             this.Controls.Add(this.textBoxCodeFournisseur);
             this.Controls.Add(this.labelCodeFournisseur);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MaJTable";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Delete Insert";
             this.Load += new System.EventHandler(this.MaJTable_Load);
             this.ResumeLayout(false);
@@ -250,7 +230,6 @@ namespace WindowsFormsAppMAJTable
 
         private System.Windows.Forms.Label labelCodeFournisseur;
         private System.Windows.Forms.TextBox textBoxCodeFournisseur;
-        private System.Windows.Forms.Button buttonCreer;
         private System.Windows.Forms.Label labelNom;
         private System.Windows.Forms.Label labelAdresse;
         private System.Windows.Forms.Label labelCodePostal;

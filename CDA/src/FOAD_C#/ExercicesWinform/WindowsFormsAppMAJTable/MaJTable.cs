@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryVerification;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -24,7 +25,7 @@ namespace WindowsFormsAppMAJTable
         }
         private void MaJComboBoxListeFournisseur()
         {
-            //comboBoxListeFournisseur.Items.Clear();
+            
             comboBoxListeFournisseur.DisplayMember = "Value";
             comboBoxListeFournisseur.ValueMember = "Key";
             Dictionary<int, string> listeFournisseurs = new Dictionary<int, string>();
@@ -81,6 +82,7 @@ namespace WindowsFormsAppMAJTable
 
                 if (sqlReader.HasRows)
                 {
+                    buttonSupprimer.Enabled = true;
                     while (sqlReader.Read())
                     {
                         textBoxNom.Text = sqlReader.GetString(1);
@@ -154,17 +156,7 @@ namespace WindowsFormsAppMAJTable
             }
         }
 
-        private void buttonCreer_Click(object sender, EventArgs e)
-        {
-            textBoxNom.ReadOnly = false;
-            textBoxNom.Clear();
-            textBoxAdresse.ReadOnly = false;
-            textBoxAdresse.Clear();
-            textBoxCP.ReadOnly = false;
-            textBoxCP.Clear();
-            textBoxVille.ReadOnly = false;
-            textBoxVille.Clear();
-        }
+       
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
@@ -220,10 +212,6 @@ namespace WindowsFormsAppMAJTable
         }
 
 
-
-
-
-
         #endregion
 
         private void textBoxCodeFournisseur_TextChanged(object sender, EventArgs e)
@@ -232,6 +220,9 @@ namespace WindowsFormsAppMAJTable
             textBoxAdresse.Clear();
             textBoxCP.Clear();
             textBoxVille.Clear();
+            buttonSupprimer.Enabled = false;
+            buttonModifier.Enabled = false;
+            comboBoxListeFournisseur.SelectedIndex = -1;
         }
 
         private void MaJTable_Load(object sender, EventArgs e)
@@ -292,7 +283,7 @@ namespace WindowsFormsAppMAJTable
                             textBoxVille.Text = sqlReader.GetString(4);
                         }
                     }
-
+                    buttonSupprimer.Enabled = true;
                     sqlReader.Close();
 
                 }
@@ -304,6 +295,86 @@ namespace WindowsFormsAppMAJTable
                 {
                     sqlConnect.Close();
                 }
+            }
+        }
+
+        private void buttonModifier_Click(object sender, EventArgs e)
+        {
+            Dictionary<int, string> listeFournisseur = new Dictionary<int, string>();
+            sqlConnect = new SqlConnection();
+            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
+            if (oConfig != null)
+            {
+                sqlConnect.ConnectionString = oConfig.ConnectionString;
+            }
+            
+            try
+            {
+                sqlConnect.Open();
+                sqlCommande = new SqlCommand();
+                sqlCommande.Connection = sqlConnect;
+
+                SqlParameter sqlCodeFournisseur = new SqlParameter("@codeFournisseur", DbType.Int32);
+                sqlCodeFournisseur.Value = textBoxCodeFournisseur.Text;
+                SqlParameter sqlNomFournisseur = new SqlParameter("@nomFournisseur", DbType.String);
+                sqlNomFournisseur.Value = textBoxNom.Text;
+                SqlParameter sqlAdresseFournisseur = new SqlParameter("@adresseFournisseur", DbType.String);
+                sqlAdresseFournisseur.Value = textBoxAdresse.Text;
+                SqlParameter sqlCpFournisseur = new SqlParameter("@cpFournisseur", DbType.String);
+                sqlCpFournisseur.Value = textBoxCP.Text;
+                SqlParameter sqlVilleFournisseur = new SqlParameter("@villeFournisseur", DbType.String);
+                sqlVilleFournisseur.Value = textBoxVille.Text;
+
+                SqlParameter[] sqlParams = new SqlParameter[] { sqlCodeFournisseur, sqlNomFournisseur, sqlAdresseFournisseur,
+            sqlCpFournisseur, sqlVilleFournisseur };
+
+                sqlCommande.Parameters.AddRange(sqlParams);
+                string strSql = "UPDATE fournisseur " +
+                                "SET fournisseur_nom =@nomFournisseur, fournisseur_adresse=@adresseFournisseur, fournisseur_cp=@cpFournisseur, fournisseur_ville=@villeFournisseur "+
+                                "WHERE fournisseur_id =@codeFournisseur ";
+                sqlCommande.CommandType = CommandType.Text;
+                sqlCommande.CommandText = strSql;
+                int sqlNbLignesAffectees = sqlCommande.ExecuteNonQuery();
+
+                if (sqlNbLignesAffectees == 1)
+                {
+                    MessageBox.Show("Modification effectuée");
+      
+
+                    foreach (KeyValuePair<int, string> item in listeFournisseur)
+                    {
+                        if (item.Key == Int32.Parse(sqlCodeFournisseur.Value.ToString()))
+                        {
+                            comboBoxListeFournisseur.SelectedItem = item;
+                        }
+                    }
+                }
+            }
+            catch (SqlException se)
+            {
+                MessageBox.Show("Modification impossible");
+                MessageBox.Show(se.Message);
+            }
+            finally
+            {
+                sqlConnect.Close();
+            }
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            bool nomIsOk = Verification.ValidNom(textBoxNom.Text);
+            bool villeIsok = Verification.ValidNom(textBoxVille.Text);
+            bool cpIsOk = Verification.ValidCP(textBoxCP.Text);
+
+
+            if (textBoxNom.TextLength>0 && textBoxAdresse.TextLength > 0 && textBoxCP.TextLength > 0 && textBoxVille.TextLength > 0 && nomIsOk && villeIsok && cpIsOk)
+            {
+                buttonAjouter.Enabled = true;
+            }
+            else
+            {
+                buttonAjouter.Enabled = false;
             }
         }
     }

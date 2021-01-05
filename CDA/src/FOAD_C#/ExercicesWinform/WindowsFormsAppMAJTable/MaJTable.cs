@@ -16,7 +16,7 @@ namespace WindowsFormsAppMAJTable
 
     public partial class MaJTable : Form
     {
-        private SqlConnection sqlConnect;
+        private SqlConnection sqlConnect;// a oter
         private SqlCommand sqlCommande;
         private SqlDataReader sqlReader;
         public MaJTable()
@@ -252,7 +252,7 @@ namespace WindowsFormsAppMAJTable
         {
             if (this.comboBoxListeFournisseur.SelectedIndex >= 0)
             {
-                sqlConnect = new SqlConnection();
+                SqlConnection sqlConnect = new SqlConnection();
                 ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["Papyrus"];
                 if (oConfig != null)
                 {
@@ -268,13 +268,17 @@ namespace WindowsFormsAppMAJTable
                     SqlParameter sqlCodeFournisseur = new SqlParameter("@codeFournisseur", DbType.String);
                     sqlCodeFournisseur.Value = comboBoxListeFournisseur.SelectedValue;
                     sqlCommande.Parameters.Add(sqlCodeFournisseur);
+
+                    int id = Int32.Parse(sqlCodeFournisseur.Value.ToString());
+
                     string strSql = "select * from fournisseur where fournisseur_id=@codeFournisseur";
                     sqlCommande.CommandType = CommandType.Text;
                     sqlCommande.CommandText = strSql;
                     sqlReader = sqlCommande.ExecuteReader();
+
                     if (sqlReader.HasRows)
                     {
-                        while (sqlReader.Read())
+                        if (sqlReader.Read() && ((int)sqlReader["fournisseur_id"]).Equals(id))
                         {
                             textBoxCodeFournisseur.Text = sqlReader.GetInt32(0).ToString();
                             textBoxNom.Text = sqlReader.GetString(1);

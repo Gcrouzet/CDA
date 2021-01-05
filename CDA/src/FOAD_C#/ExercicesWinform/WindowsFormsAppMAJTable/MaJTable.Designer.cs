@@ -177,7 +177,6 @@ namespace WindowsFormsAppMAJTable
             // 
             // comboBoxListeFournisseur
             // 
-            this.comboBoxListeFournisseur.Enabled = false;
             this.comboBoxListeFournisseur.FormattingEnabled = true;
             this.comboBoxListeFournisseur.Location = new System.Drawing.Point(194, 18);
             this.comboBoxListeFournisseur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

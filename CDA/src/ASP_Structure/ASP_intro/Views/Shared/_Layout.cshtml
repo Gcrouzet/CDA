@@ -4,11 +4,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/StyleSheet.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <header>
+        <img src="~/img/TP_Freelancer_logo.jpg" class="freelance" />
+        <nav>
+            <button onclick="href='#'"><i class="fas fa-users"></i> Clients</button>
+            <button onclick="href='#'"><i class="fas fa-coffee"></i> Missions</button>
+            <button onclick="href='#'" class="devis"><i class="fas fa-calculator"></i> Devis & Factures</button>
+        </nav>
+    </header>
     <div>
         @RenderBody()
     </div>
+    <footer>
+        <article class="lien">
+            <a href="#">Ajouter</a><i class="fas fa-circle"></i>
+            <a href="#">Manger</a><i class="fas fa-circle"></i>
+            <a href="#">Enlever</a><i class="fas fa-circle"></i>
+            <a href="#">Dormir</a><i class="fas fa-circle"></i>
+            <a href="#">Jouer</a>
+        </article>
+        <div class="copyright">
+            <span><i class="fas fa-copyright"></i> Copyright 2021 CROUZET Gabriel</span>
+        </div>
+    </footer>
 </body>
 </html>

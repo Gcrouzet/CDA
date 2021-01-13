@@ -1,0 +1,125 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    width: 960px;
+    text-align: center;
+    color: #45505E;
+}
+
+button {
+    padding: 4px;
+}
+
+.dernier {
+    margin-right: 90px;
+    margin-bottom: 30px;
+    margin-top: -15px;
+}
+
+.ajout {
+    margin-bottom: 50px;
+}
+
+button:hover {
+    background-color: #3809DD;
+    color: #FAF7F5;
+}
+
+.freelance {
+    width: 20%;
+    margin: 5px;
+    float: left;
+}
+
+.devis {
+    background-color: #38DD09;
+    color: #FAF7F5;
+}
+
+nav {
+    text-align: right;
+    margin: 5px;
+}
+
+main {
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 75px;
+}
+
+h2 {
+    margin-bottom: 50px;
+}
+
+div.copyright {
+    text-align: left;
+    background-color: #45505E;
+    color: #FAF7F5;
+    height: 30px;
+    padding-top: 7px;
+    border-radius: 0 0 5px 5px;
+    padding-left: 20px;
+    font-size: x-small;
+}
+
+.lien {
+    height: 80px;
+    background-color: #FAF7F5;
+    padding-top: 30px;
+}
+
+    .lien > a {
+        text-decoration: none;
+        color: #45505E;
+    }
+
+.fa-circle {
+    font-size: 5%;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
+th {
+    color: #FAF7F5;
+    background-color: #111;
+}
+
+table {
+    border: solid black 2px;
+    border-collapse: collapse;
+    margin-left: 160px;
+    text-align: left;
+    margin-bottom: 150px;
+}
+
+.id {
+    width: 50px;
+}
+
+.name {
+    width: 250px;
+}
+
+.email {
+    width: 250px;
+}
+
+.actions {
+    width: 130px;
+}
+
+.fa-edit {
+    color: #38DD09;
+    padding-right: 20px;
+}
+
+.fa-times {
+    color: red;
+}

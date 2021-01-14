@@ -13,12 +13,15 @@ namespace Freelancer.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Veuillez saisir un nom")]
+        [StringLength(50, ErrorMessage = "Limite maximum de 50 caractères")]
         [Column("cat_Nom", TypeName = "varchar")]
+        [Display(Name = "Nom de la catégorie")]
         public string Nom { get; set; }
 
         [Column("cat_description", TypeName = "Text")]
+        [DataType(DataType.Text)]
+        [Display(Name = "Description de la catégorie")]
         public string Description { get; set; }
     }
 }

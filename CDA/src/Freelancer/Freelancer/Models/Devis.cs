@@ -13,17 +13,17 @@ namespace Freelancer.Models
         [Column("devis_id")]
         public int DevisId { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Veuillez saisir un état")]
+        [StringLength(10, ErrorMessage = "Limite maximum de 10 caractères")]
         [Column("devis_etat", TypeName = "char")]
         public char Etat { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Veuillez saisir une date")]
         [DataType(DataType.Date)]
         [Column("devis_date")]
         public DateTime Date { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Veuillez saisir un montant")]
         [Column("devis_montant")]
         public int Montant { get; set; }
 
@@ -34,7 +34,7 @@ namespace Freelancer.Models
         [Column("devis_montant_final")]
         public int MontantFinal { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Veuillez saisir une mission")]
         [Column("mission_id")]
         [ForeignKey("Missions")]
         public int MissionId { get; set; }
